@@ -505,6 +505,20 @@
     align-items: start;
 }
 
+.about-text {
+    font-size: 1.125rem; /* Slightly larger: 18px */
+    line-height: 1.7; /* Slightly tighter for better density */
+    color: var(--text-primary);
+    padding-right: 2rem; /* Breathe space from right edge */
+}
+
+/* Optional: Add vertical alignment polish */
+@media (min-width: 769px) {
+    .about-text {
+        padding-top: 1.5rem; /* Visually align top of text with top of card content */
+    }
+}
+
 .founder-card {
     width: 100%;
     max-width: 360px;
@@ -1186,6 +1200,7 @@
 </body>
 
 </html>
+
 
 
 
