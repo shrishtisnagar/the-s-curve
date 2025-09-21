@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The S Curve - Marketing automation and strategic growth for B2B businesses. Get expert consultation or done-for-you automation services. Book a call today.">
+    <meta name="keywords" content="marketing automation, B2B marketing, no-code automation, growth marketing, LinkedIn marketing, Shrishti S Nagar">
+    <meta name="author" content="Shrishti S Nagar">
+    <title>The S Curve - Marketing Automation & B2B Growth | Shrishti S Nagar</title>
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --cosmos-dark: #210535;
+            --cosmos-deep: #430d4b;
+            --cosmos-medium: #7b337d;
+            --accent-primary: #c874b2;
+            --accent-light: #f5d5e0;
+            --text-primary: #FFFFFF;
+            --text-secondary: #f5d5e0;
+            --gray: #7b337d;
+            --yellow: #FFD679;
+            --yellow-bg: #FFD679;
+            --lightest-pink: #fef7f7;
+            --cosmic-gradient: linear-gradient(135deg, #c874b2 0%, #f5d5e0 100%);
+            --subtle-glow: rgba(200, 116, 178, 0.5);
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--cosmos-dark);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Universe Background */
+        .universe-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: radial-gradient(ellipse at center, var(--cosmos-medium) 0%, var(--cosmos-dark) 100%);
+        }
+        
+        /* Stars - moved after nebula to ensure visibility */
+        .stars {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--text-primary);
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+            box-shadow: 0 0 2px var(--text-primary);
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        
+        /* Nebula clouds */
+        .nebula {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0.15;
+            z-index: -3;
+        }
+        
+        .nebula::before,
+        .nebula::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+        }
+        
+        .nebula::before {
+            width: 60%;
+            height: 60%;
+            background: var(--accent-primary);
+            top: 20%;
+            left: -20%;
+            animation: float 30s infinite ease-in-out;
+        }
+        
+        .nebula::after {
+            width: 50%;
+            height: 50%;
+            background: var(--accent-light);
+            bottom: 10%;
+            right: -15%;
+            animation: float 35s infinite ease-in-out reverse;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Header with glass morphism */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 31, 0.8);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2.5rem 0;
+            min-height: 100px;
+        }
+        
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            position: relative;
+        }
+
+        .logo img {
+            height: 36px;
+            width: auto;
+            border-radius: 4px;
+        }
+        
+        .logo::after {
+            content: '_';
+            color: var(--accent-primary);
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        .nav-links {
+            display: none;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            position: relative;
+            transition: all 0.3s;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-primary);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .header-cta {
+            background: var(--yellow);
+            color: var(--cosmos-dark);
+            border: 1px solid var(--yellow);
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+            border-radius: 4px;
+        }
+        
+        .header-cta:hover {
+            color: var(--cosmos-dark);
+            background: var(--yellow);
+            box-shadow: 0 0 20px rgba(255, 214, 121, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 160px 0 60px;
+            position: relative;
+        }
+        
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .hero-content h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            position: relative;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .hero-content h1::before {
+            content: '>';
+            color: var(--accent-primary);
+            position: absolute;
+            left: -40px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.3; transform: scale(1.1); }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin: 2rem 0 3rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.4s forwards;
+        }
+        
+        .stat {
+            border-left: 2px solid var(--accent-primary);
+            padding-left: 1rem;
+            position: relative;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+            color: var(--accent-primary);
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+        
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.6s forwards;
+        }
+        
+        .btn-primary {
+            background: var(--yellow);
+            color: var(--cosmos-dark);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 214, 121, 0.5);
+            background: var(--yellow);
+            color: var(--cosmos-dark);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--yellow);
+            padding: 1rem 2rem;
+            border: 1px solid var(--yellow);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border-radius: 4px;
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--yellow);
+            color: var(--cosmos-dark);
+            background: var(--yellow);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 214, 121, 0.3);
+        }
+        
+        .badge {
+            display: inline-block;
+            background: var(--lightest-pink);
+            border: 1px solid var(--accent-light);
+            color: var(--cosmos-dark);
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.8s forwards;
+            border-radius: 20px;
+        }
+        
+        /* Visual Side - Terminal */
+        .hero-visual {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            animation: fadeIn 1s ease 1s forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .terminal-window {
+            background: rgba(20, 20, 40, 0.6);
+            border: 1px solid var(--accent-primary);
+            backdrop-filter: blur(20px);
+            border-radius: 12px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 500px;
+            font-family: 'Space Grotesk', monospace;
+            position: relative;
+            box-shadow: 0 0 40px rgba(99, 102, 241, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .terminal-window:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 60px rgba(99, 102, 241, 0.3);
+        }
+        
+        .terminal-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--accent-primary);
+            padding: 0.5rem 1rem;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            border-radius: 12px 12px 0 0;
+        }
+        
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--yellow);
+        }
+        
+        .terminal-content {
+            margin-top: 2rem;
+            color: var(--text-primary);
+            font-size: 0.875rem;
+            line-height: 1.4;
+        }
+        
+        .typing-line {
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 3s steps(40, end);
+        }
+        
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 0;
+            position: relative;
+            background: rgba(10, 10, 31, 0.3);
+        }
+        
+        section:nth-child(even) {
+            background: rgba(20, 20, 40, 0.3);
+        }
+        
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .cta-section h2::after {
+            display: none;
+        }
+        
+        section:not(.cta-section) h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent-primary);
+        }
+        
+        .fade-in-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in-element.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-primary);
+        }
+        
+        .founder-card {
+            background: rgba(20, 20, 40, 0.6);
+            border: 1px solid var(--accent-primary);
+            backdrop-filter: blur(20px);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+            border-radius: 12px;
+        }
+        
+        .founder-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px var(--subtle-glow);
+        }
+        
+        /* ✅ Updated Founder Image Style */
+        .founder-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: block;
+            border: 3px solid var(--accent-primary);
+        }
+        
+        .founder-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .founder-card p {
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+        
+        .founder-card p:first-of-type {
+            color: var(--accent-light);
+            font-weight: 600;
+        }
+        
+        /* Portfolio Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .portfolio-card {
+            background: rgba(20, 20, 40, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        
+        .portfolio-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--accent-primary);
+            transition: left 0.3s;
+            z-index: -1;
+            opacity: 0.1;
+        }
+        
+        .portfolio-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+        }
+        
+        .portfolio-card:hover::before {
+            left: 0;
+        }
+        
+        .portfolio-metric {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .portfolio-card:hover .portfolio-metric {
+            color: var(--accent-primary);
+        }
+        
+        .portfolio-title {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .portfolio-description {
+            color: var(--text-secondary);
+        }
+        
+        /* Services Cards */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: rgba(20, 20, 40, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 12px;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+            border-color: var(--accent-primary);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -1px;
+            right: 20px;
+            background: var(--accent-primary);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            font-weight: 700;
+            font-size: 0.75rem;
+            border-radius: 0 0 8px 8px;
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+        
+        .service-title {
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-features {
+            list-style: none;
+            text-align: left;
+            margin: 2rem 0;
+            width: 100%;
+            max-width: 300px;
+        }
+        
+        .service-features li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+        
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+            font-weight: bold;
+        }
+        
+        .service-card .btn-primary {
+            margin-top: auto;
+        }
+        
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background: rgba(20, 20, 40, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            position: relative;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--accent-primary);
+            font-family: 'Space Grotesk', sans-serif;
+            opacity: 0.3;
+        }
+        
+        .testimonial-stars {
+            color: #FFD679;
+            margin-bottom: 1rem;
+            letter-spacing: 0.2rem;
+            font-size: 1.2rem;
+        }
+        
+        .testimonial-text {
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+        
+        .testimonial-author {
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .testimonial-author h4 {
+            margin-bottom: 0.25rem;
+            color: var(--text-primary);
+        }
+        
+        .testimonial-author p {
+            color: var(--gray);
+            font-size: 0.875rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(129, 140, 248, 0.1) 100%);
+            color: var(--text-primary);
+            text-align: center;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section h2 {
+            color: var(--text-primary);
+        }
+        
+        .cta-section .btn-primary {
+            background: var(--yellow);
+            color: var(--cosmos-dark);
+        }
+        
+        .cta-section .btn-primary:hover {
+            background: var(--yellow);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 214, 121, 0.5);
+        }
+        
+        .cta-section .btn-secondary {
+            border-color: var(--yellow);
+            color: var(--yellow);
+            background: transparent;
+        }
+        
+        .cta-section .btn-secondary:hover {
+            background: var(--yellow);
+            border-color: var(--yellow);
+            color: var(--cosmos-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 214, 121, 0.3);
+        }
+        
+        .urgency {
+            display: inline-block;
+            background: var(--lightest-pink);
+            color: var(--cosmos-dark);
+            padding: 0.5rem 1rem;
+            margin-top: 1rem;
+            font-weight: 700;
+            border-radius: 20px;
+            border: 2px solid var(--accent-light);
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(5, 5, 17, 0.8);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--accent-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-primary);
+            text-decoration: none;
+            transition: all 0.3s;
+            border-radius: 50%;
+            background: transparent;
+        }
+        
+        .social-links a:hover {
+            background: var(--accent-primary);
+            color: var(--text-primary);
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px var(--subtle-glow);
+        }
+        
+        /* Mobile Responsive */
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                padding: 1.5rem 0;
+            }
+            
+            .hero {
+                padding: 120px 0 60px;
+            }
+            
+            .hero-grid,
+            .about-content,
+            .portfolio-grid,
+            .services-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-visual {
+                display: none;
+            }
+            
+            h1::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Universe Background Elements -->
+    <div class="universe-bg"></div>
+    <div class="nebula"></div>
+    <div class="stars" id="stars"></div>
+    
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <!-- ✅ LOGO + TEXT TOGETHER -->
+            <a href="#" class="logo">
+                <img src="images/logo.png" alt="The S Curve Logo">
+                The S Curve
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Results</a></li>
+            </ul>
+            <a href="https://topmate.io/shrishtisnagar" class="header-cta">Book a Call</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1>Still stuck in old-age marketing?</h1>
+                    <p class="hero-subtitle">Save both Money & Time with AI + Marketing Automation</p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">25+</span>
+                            <span class="stat-label">Global Clients</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">$50K+</span>
+                            <span class="stat-label">Revenue Generated</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">20hrs</span>
+                            <span class="stat-label">Saved Monthly</span>
+                        </div>
+                    </div>
+                    
+                    <div class="cta-group">
+                        <a href="https://topmate.io/shrishtisnagar" class="btn-primary">Book 1:1 Consultation →</a>
+                        <a href="#services" class="btn-secondary">Get custom automation</a>
+                    </div>
+                    
+                    <div class="badge">🚀 Last 5 slots this month</div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-dot"></div>
+                            <div class="terminal-dot"></div>
+                            <div class="terminal-dot"></div>
+                        </div>
+                        <div class="terminal-content">
+                            <div class="typing-line">> Initializing automation...</div>
+                            <div style="animation-delay: 1s;" class="typing-line">> Loading AI modules...</div>
+                            <div style="animation-delay: 2s;" class="typing-line">> System ready.</div>
+                            <div style="animation-delay: 3s;" class="typing-line">> Your marketing: AUTOMATED ✓</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about fade-in-element" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Brain Behind Your Growth</h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hi, I'm Shrishti – I help B2B businesses build sustainable growth systems through a mix of AI, marketing and automation.</p>
+                    <br>
+                    <p>With 6+ years of experience across content, social media, and marketing automation, I've helped 25+ global clients (US, Australia, India, South Africa) generate real results without massive ad spends.</p>
+                    <br>
+                    <p>I specialise in creating automated workflows with tools like HubSpot, Zapier, and n8n that save you 20+ hours monthly while driving consistent leads through AI marketing strategies.</p>
+                </div>
+                
+                <div class="founder-card">
+                    <!-- ✅ REAL FOUNDER IMAGE -->
+                    <img src="images/founder.jpeg" alt="Shrishti S Nagar" class="founder-img">
+                    <h3>Shrishti S Nagar</h3>
+                    <p>Marketing Strategist</p>
+                    <a href="https://linkedin.com/in/shrishtisnagar" class="btn-primary" style="width: 100%;">
+                        Let's connect on LinkedIn →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio fade-in-element" id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2>Real Results for Real Businesses</h2>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <div class="portfolio-metric">$8.4K</div>
+                    <h3 class="portfolio-title">LinkedIn Funnel Success</h3>
+                    <p class="portfolio-description">Built LinkedIn event funnel for business coach that converted to high-ticket program sales</p>
+                </div>
+                
+                <div class="portfolio-card">
+                    <div class="portfolio-metric">9K+</div>
+                    <h3 class="portfolio-title">Founder Brand Building</h3>
+                    <p class="portfolio-description">Scaled B2B founder's LinkedIn presence with viral posts and consistent inbound leads</p>
+                </div>
+                
+                <div class="portfolio-card">
+                    <div class="portfolio-metric">200%</div>
+                    <h3 class="portfolio-title">Social Media Growth</h3>
+                    <p class="portfolio-description">Achieved organic Instagram growth from 2K to 6K followers for Edtech platform</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="https://yourportfolio.com" class="btn-primary">View Complete Portfolio →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services fade-in-element" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Choose Your Growth Path</h2>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💡</div>
+                    <h3 class="service-title">1:1 Consultation</h3>
+                    <ul class="service-features">
+                        <li>60-minute strategy session</li>
+                        <li>Marketing audit & roadmap</li>
+                        <li>Post session strategy doc</li>
+                        <li>7 days extended chat support</li>
+                        <li>Recording & action plan</li>
+                    </ul>
+                    <a href="https://topmate.io/shrishtisnagar" class="btn-primary" style="width: 100%;">Book Consultation</a>
+                </div>
+                
+                <div class="service-card">
+                    <span class="popular-badge">MOST POPULAR</span>
+                    <div class="service-icon">⚡</div>
+                    <h3 class="service-title">Marketing Automation Setup</h3>
+                    <ul class="service-features">
+                        <li>No-code automation workflows</li>
+                        <li>Marketing funnel setup</li>
+                        <li>AI & Toolstack integration</li>
+                        <li>Training & documentation</li>
+                        <li>1 month extended support</li>
+                    </ul>
+                    <a href="https://calendly.com/your-custom-automation-link" class="btn-primary" style="width: 100%;">Book Custom Automation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials fade-in-element" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Client Success Stories</h2>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★ ★ ★ ★ ★</div>
+                    <p class="testimonial-text">"Rarely do you find someone who knows what they're doing AND makes the process effortless. Highly recommend working with her."</p>
+                    <div class="testimonial-author">
+                        <h4>Carlo Fortugno</h4>
+                        <p>CEO, DustAct</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★ ★ ★ ★ ★</div>
+                    <p class="testimonial-text">"I trust her fully and she digs deep to fully understand your business. Grateful for her work, it makes my life so much easier!"</p>
+                    <div class="testimonial-author">
+                        <h4>Lauren Plante</h4>
+                        <p>Mindset and Life Coach</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★ ★ ★ ★ ★</div>
+                    <p class="testimonial-text">"One of the BEST decisions I made! I would recommend her to those who have A LOT on their plate and could use some serious help"</p>
+                    <div class="testimonial-author">
+                        <h4>Dr. Prachi Khandekar</h4>
+                        <p>Linguistics Expert</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Automate Your Marketing?</h2>
+            <div class="cta-group" style="justify-content: center;">
+                <a href="https://topmate.io/shrishtisnagar" class="btn-primary">Book Your 1:1 Consultation</a>
+                <a href="https://calendly.com/your-custom-automation-link" class="btn-secondary">Get Your Custom Automation</a>
+            </div>
+            <div class="urgency">⚡ Last few slots till we are fully booked for the year</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <!-- ✅ FOOTER LOGO + TEXT -->
+            <div class="logo" style="justify-content: center; font-size: 2rem; margin-bottom: 1rem;">
+                <img src="images/logo.png" alt="The S Curve Logo" style="height: 40px; margin-right: 10px;">
+                The S Curve
+            </div>
+            <p style="opacity: 0.8;">Strategic B2B Growth Through Marketing Automation</p>
+            <p style="opacity: 0.6; margin-top: 0.5rem;">Proudly serving Global Clients from India</p>
+            
+            <div class="social-links">
+                <a href="https://linkedin.com/in/shrishtisnagar" target="_blank">in</a>
+                <a href="mailto:shrishtisnagar@gmail.com">@</a>
+            </div>
+            
+            <p style="opacity: 0.6; font-size: 0.875rem; margin-top: 2rem;">
+                © 2025 The S Curve | Shrishti S Nagar. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Generate stars
+        const starsContainer = document.getElementById('stars');
+        const numStars = 150;
+        
+        for (let i = 0; i < numStars; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            
+            // Variable star sizes
+            const size = Math.random() * 2 + 0.5;
+            star.style.width = size + 'px';
+            star.style.height = size + 'px';
+            
+            starsContainer.appendChild(star);
+        }
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-in-element').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Subtle parallax effect on mouse move
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            document.querySelector('.nebula').style.transform = `translate(${x * 20}px, ${y * 20}px)`;
+            document.querySelector('.stars').style.transform = `translate(${x * -10}px, ${y * -10}px)`;
+        });
+    </script>
+</body>
+</html>
