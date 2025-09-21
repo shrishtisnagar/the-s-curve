@@ -500,45 +500,37 @@
         
         .about-content {
     display: grid;
-    grid-template-columns: 1fr 360px; /* Left: flexible text | Right: fixed-width card */
+    grid-template-columns: 360px 1fr; /* Fixed left | Flexible right */
     gap: 4rem;
-    align-items: start; /* Align top, not center — avoids awkward vertical centering */
+    align-items: start;
 }
 
-/* Ensure founder card doesn't stretch and stays aligned to the right edge */
 .founder-card {
     width: 100%;
     max-width: 360px;
-    margin-left: auto; /* Push to right within its column */
-    align-self: start; /* Prevent vertical stretching */
+    margin: 0; /* Remove auto margin that was pushing it right */
+    align-self: start;
+    background: rgba(20, 20, 40, 0.6);
+    border: 1px solid var(--accent-primary);
+    backdrop-filter: blur(20px);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+    border-radius: 12px;
 }
 
-.founder-card {
-    max-width: 300px;
-    margin-left: auto;
+.founder-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px var(--subtle-glow);
 }
-        
-        .about-text {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: var(--text-primary);
-        }
-        
-        .founder-card {
-            background: rgba(20, 20, 40, 0.6);
-            border: 1px solid var(--accent-primary);
-            backdrop-filter: blur(20px);
-            padding: 2.5rem 2rem;
-            text-align: center;
-            position: relative;
-            transition: all 0.3s ease;
-            border-radius: 12px;
-        }
-        
-        .founder-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 30px var(--subtle-glow);
-        }
+
+/* Optional: Add vertical rhythm if needed */
+@media (min-width: 769px) {
+    .about-text {
+        padding-top: 1.5rem; /* Align top of text with top of card content */
+    }
+}
         
         /* ✅ Updated Founder Image Style */
         .founder-img {
@@ -1194,6 +1186,7 @@
 </body>
 
 </html>
+
 
 
 
