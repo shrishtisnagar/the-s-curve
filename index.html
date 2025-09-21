@@ -500,9 +500,17 @@
         
         .about-content {
     display: grid;
-    grid-template-columns: 1.3fr 0.7fr; /* Even more text space */
+    grid-template-columns: 1fr 360px; /* Left: flexible text | Right: fixed-width card */
     gap: 4rem;
-    align-items: center;
+    align-items: start; /* Align top, not center — avoids awkward vertical centering */
+}
+
+/* Ensure founder card doesn't stretch and stays aligned to the right edge */
+.founder-card {
+    width: 100%;
+    max-width: 360px;
+    margin-left: auto; /* Push to right within its column */
+    align-self: start; /* Prevent vertical stretching */
 }
 
 .founder-card {
@@ -1186,6 +1194,7 @@
 </body>
 
 </html>
+
 
 
 
