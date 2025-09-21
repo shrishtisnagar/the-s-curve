@@ -499,11 +499,17 @@
         }
         
         .about-content {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 4rem;
-            align-items: center;
-        }
+    display: grid;
+    grid-template-columns: 1fr 0.8fr; /* Text | Founder — now text is wider */
+    gap: 4rem;
+    align-items: center;
+}
+
+/* Optional: Add max-width to founder card so it doesn't stretch */
+.founder-card {
+    max-width: 320px;
+    margin-left: auto; /* Push it to right edge of its column */
+}
         
         .about-text {
             font-size: 1.05rem;
@@ -1181,5 +1187,6 @@
 </body>
 
 </html>
+
 
 
