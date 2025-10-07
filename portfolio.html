@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio - Shrishti S Nagar | Marketing Strategist & Automation Expert. View case studies, certifications, and client results.">
+    <title>Portfolio - The S Curve | Shrishti S Nagar</title>
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="logo.png">
+
+ <base target="_blank">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Copy ALL base styles from main site */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --cosmos-dark: #210535;
+            --cosmos-deep: #430d4b;
+            --cosmos-medium: #7b337d;
+            --accent-primary: #c874b2;
+            --accent-light: #f5d5e0;
+            --text-primary: #FFFFFF;
+            --text-secondary: #f5d5e0;
+            --gray: #7b337d;
+            --yellow: #FFD679;
+            --yellow-bg: #FFD679;
+            --lightest-pink: #fef7f7;
+            --cosmic-gradient: linear-gradient(135deg, #c874b2 0%, #f5d5e0 100%);
+            --subtle-glow: rgba(200, 116, 178, 0.5);
+            --success-green: #4CAF50;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--cosmos-dark);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            position: relative;
+            width: 100%;
+            min-width: 320px;
+        }
+        
+        /* All base styles from main site... */
+        .universe-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -2;
+            background: radial-gradient(ellipse at center, var(--cosmos-medium) 0%, var(--cosmos-dark) 100%);
+            min-width: 100%;
+            min-height: 100%;
+        }
+        
+        .stars {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            min-width: 100%;
+            min-height: 100%;
+        }
+        
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--text-primary);
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+            box-shadow: 0 0 2px var(--text-primary);
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        
+        .nebula {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            opacity: 0.15;
+            z-index: -3;
+            min-width: 100%;
+            min-height: 100%;
+        }
+        
+        .nebula::before,
+        .nebula::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+        }
+        
+        .nebula::before {
+            width: 60%;
+            height: 60%;
+            background: var(--accent-primary);
+            top: 20%;
+            left: -20%;
+            animation: float 30s infinite ease-in-out;
+        }
+        
+        .nebula::after {
+            width: 50%;
+            height: 50%;
+            background: var(--accent-light);
+            bottom: 10%;
+            right: -15%;
+            animation: float 35s infinite ease-in-out reverse;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        /* Header - keeping EXACT same as homepage */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 31, 0.8);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            left: 0;
+            box-sizing: border-box;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2.5rem 0;
+            min-height: 100px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            position: relative;
+        }
+
+        .logo img {
+            height: 36px;
+            width: auto;
+            border-radius: 4px;
+        }
+        
+        .nav-links {
+            display: none;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            position: relative;
+            transition: all 0.3s;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-primary);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Add active state for current page */
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        .header-cta {
+            background: var(--yellow);
+            color: var(--cosmos-dark);
+            border: 1px solid var(--yellow);
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+            border-radius: 4px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            max-width: 180px;
+        }
+        
+        .header-cta:hover {
+            color: var(--cosmos-dark);
+            background: var(--yellow);
+            box-shadow: 0 0 20px rgba(255, 214, 121, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        /* Portfolio Hero - Shorter */
+        .portfolio-hero {
+            min-height: 35vh;
+            display: flex;
+            align-items: center;
+            padding: 160px 0 40px;
+            position: relative;
+            text-align: center;
+        }
+        
+        .portfolio-hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* About Me Section */
+        .about-me-section {
+            background: rgba(20, 20, 40, 0.3);
+            padding: 60px 0;
+        }
+        
+        .about-me-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .profile-area {
+            text-align: center;
+        }
+        
+        .profile-img-container {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            margin: 0 auto 2rem;
+        }
+        
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--accent-primary);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .profile-ring {
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            border: 2px dashed var(--accent-light);
+            border-radius: 50%;
+            animation: rotate 20s linear infinite;
+            opacity: 0.5;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .about-me-text h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .about-me-text h2::after {
+            display: none;
+        }
+        
+        .about-me-text p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .fun-facts {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .fact-item {
+            padding: 1rem;
+            background: rgba(200, 116, 178, 0.1);
+            border: 1px solid var(--accent-primary);
+            border-radius: 8px;
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .fact-item:hover {
+            transform: translateY(-3px);
+            background: rgba(200, 116, 178, 0.2);
+        }
+        
+        .fact-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            display: block;
+        }
+        
+        .fact-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+            position: relative;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent-primary);
+        }
+        
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Expertise Section */
+        .expertise-section {
+            background: transparent;
+        }
+        
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .expertise-card {
+            background: rgba(20, 20, 40, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            text-align: center;
+            border-radius: 8px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .expertise-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--accent-primary);
+            opacity: 0.1;
+            transition: left 0.3s;
+        }
+        
+        .expertise-card:hover::before {
+            left: 0;
+        }
+        
+        .expertise-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(200, 116, 178, 0.2);
+        }
+        
+        .expertise-icon {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .expertise-card h3 {
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 0.5rem;
+        }
+        
+        .expertise-card p {
+            margin-bottom: auto;
+            padding-bottom: 1rem;
+        }
+        
+        .expertise-count {
+            background: var(--accent-primary);
+            color: var(--text-primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+        
+        /* Certifications - Compact Grid Design */
+        .certifications {
+            background: rgba(20, 20, 40, 0.3);
+        }
+        
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .cert-card {
+            background: rgba(20, 20, 40, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .cert-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background: var(--accent-primary);
+            transform: scaleY(0);
+            transition: transform 0.3s;
+        }
+        
+        .cert-card:hover::before {
+            transform: scaleY(1);
+        }
+        
+        .cert-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(200, 116, 178, 0.15);
+        }
+        
+        .cert-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(200, 116, 178, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+        }
+        
+        .cert-content {
+            flex: 1;
+        }
+        
+        .cert-content h4 {
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        
+        .cert-content p {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+        
+        /* Automation Showcase - with placeholder for images */
+        .automation-showcase {
+            background: rgba(20, 20, 40, 0.3);
+        }
+        
+        .automation-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .automation-card {
+            background: rgba(20, 20, 40, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .automation-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(200, 116, 178, 0.2);
+        }
+        
+        .automation-placeholder {
+            width: 100%;
+            height: 120px;
+            background: rgba(200, 116, 178, 0.1);
+            border: 2px dashed rgba(200, 116, 178, 0.3);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+        
+        .automation-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            text-align: center;
+        }
+        
+        .automation-description {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .automation-features {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        
+        .feature-item::before {
+            content: '✓';
+            color: var(--accent-primary);
+            font-weight: bold;
+        }
+        
+        .automation-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        
+        .tag {
+            background: rgba(200, 116, 178, 0.2);
+            border: 1px solid var(--accent-primary);
+            padding: 0.2rem 0.5rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+        }
+        
+        /* Case Studies */
+        .case-studies-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        
+        .case-study-card {
+            background: rgba(20, 20, 40, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .case-study-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(200, 116, 178, 0.2);
+        }
+        
+        .case-study-header {
+            padding: 1.5rem;
+            background: rgba(200, 116, 178, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .case-study-badge {
+            display: inline-block;
+            background: var(--yellow);
+            color: var(--cosmos-dark);
+            padding: 0.2rem 0.6rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            border-radius: 20px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .case-study-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .case-study-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+        
+        .case-study-content {
+            padding: 1.5rem;
+        }
+        
+        .case-study-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .case-study-metrics {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .metric {
+            text-align: center;
+        }
+        
+        .metric-number {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+        }
+        
+        .metric-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+        
+        .case-study-results {
+            background: rgba(200, 116, 178, 0.1);
+            padding: 0.75rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            text-align: center;
+            color: var(--accent-light);
+        }
+        
+        /* Animated Testimonials */
+        .testimonials-container {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+            background: rgba(20, 20, 40, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+        
+        .testimonials-track {
+            display: flex;
+            animation: scroll 30s linear infinite;
+        }
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .testimonials-track:hover {
+            animation-play-state: paused;
+        }
+        
+        .testimonial-card {
+            min-width: 400px;
+            background: rgba(20, 20, 40, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            margin-right: 2rem;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--accent-primary);
+            opacity: 0.3;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .testimonial-stars {
+            color: var(--yellow);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .testimonial-text {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .testimonial-role {
+            color: var(--gray);
+            font-size: 0.875rem;
+        }
+        
+        /* Client Logos */
+        .client-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(20, 20, 40, 0.3);
+            border-radius: 12px;
+        }
+        
+        /* CTA Section */
+        .portfolio-cta {
+            background: linear-gradient(135deg, rgba(200, 116, 178, 0.1) 0%, rgba(245, 213, 224, 0.1) 100%);
+            text-align: center;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-content h2::after {
+            display: none;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .btn-primary {
+            background: var(--yellow);
+            color: var(--cosmos-dark);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            white-space: nowrap;
+            display: inline-block;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 214, 121, 0.5);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--yellow);
+            padding: 1rem 2rem;
+            border: 1px solid var(--yellow);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border-radius: 4px;
+            white-space: nowrap;
+            display: inline-block;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--yellow);
+            color: var(--cosmos-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 214, 121, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(5, 5, 17, 0.8);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3rem 0;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--accent-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-primary);
+            text-decoration: none;
+            transition: all 0.3s;
+            border-radius: 50%;
+            background: transparent;
+        }
+        
+        .social-links a:hover {
+            background: var(--accent-primary);
+            color: var(--text-primary);
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px var(--subtle-glow);
+        }
+        
+        /* Animations */
+        .fade-in-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in-element.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            nav {
+                padding: 1.5rem 0;
+            }
+            
+            .portfolio-hero {
+                padding: 140px 0 40px;
+            }
+            
+            .portfolio-hero h1 {
+                font-size: clamp(1.8rem, 7vw, 3rem);
+            }
+            
+            h2 {
+                font-size: 2.25rem;
+            }
+            
+            .about-me-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .profile-img-container {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .expertise-grid,
+            .automation-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .case-studies-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-card {
+                min-width: 300px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Universe Background Elements -->
+    <div class="universe-bg"></div>
+    <div class="nebula"></div>
+    <div class="stars" id="stars"></div>
+    
+    <!-- Header - EXACT same navigation as homepage -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="The S Curve Logo">
+                The S Curve
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#testimonials">Results</a></li>
+            </ul>
+            <a href="https://topmate.io/shrishtisnagar/1742503" class="header-cta">Book a Call</a>
+        </nav>
+    </header>
+
+    <!-- Shorter Portfolio Hero -->
+    <section class="portfolio-hero">
+        <div class="container">
+            <h1>So you actually check portfolios?</h1>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section class="about-me-section fade-in-element">
+        <div class="container">
+            <div class="about-me-content">
+                <div class="profile-area">
+                    <div class="profile-img-container">
+                        <div class="profile-ring"></div>
+                        <img src="founder.jpeg" alt="Shrishti S Nagar" class="profile-img">
+                    </div>
+                    <h3 style="font-family: 'Poppins', sans-serif; font-size: 1.5rem; margin-bottom: 0.5rem;">Shrishti S Nagar</h3>
+                    <p style="color: var(--accent-light);">Marketing Strategist</p>
+                </div>
+                
+                <div class="about-me-text">
+                    <h2>Hi, I'm Shrishti!</h2>
+                    <p>
+                        I could go on about being an EXPERT, but here's what actually sets me apart:
+                    </p>
+                    <p>
+                        ✅ I'm obsessed with understanding <strong>how and why people make decisions</strong>, 
+                        and I reverse-engineer that into processes that actually work.
+                    </p>
+                    <p>
+                        ✅ I'm basically "Monica" from Friends when it comes to organization - 
+                        I thrive in documentation, planning, strategy, systems & processes.
+                    </p>
+                    <p>
+                        ✅ My clients describe me as "accountable" - a word that speaks volumes in the world of freelancing.
+                    </p>
+                    
+                    <div class="fun-facts">
+                        <div class="fact-item">
+                            <span class="fact-number">7+</span>
+                            <span class="fact-label">Years Experience</span>
+                        </div>
+                        <div class="fact-item">
+                            <span class="fact-number">25+</span>
+                            <span class="fact-label">Global Clients</span>
+                        </div>
+                        <div class="fact-item">
+                            <span class="fact-number">$50K+</span>
+                            <span class="fact-label">Revenue Generated</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Expertise Section -->
+    <section class="expertise-section fade-in-element" id="expertise">
+        <div class="container">
+            <div class="section-header">
+                <h2>My Expertise</h2>
+            </div>
+            
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <div class="expertise-icon">💼</div>
+                    <h3>Marketing Strategy</h3>
+                    <p>Organic + Paid Marketing and automated outreach</p>
+                    <div class="expertise-count">25+ Projects</div>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="expertise-icon">⚡</div>
+                    <h3>Marketing Automation</h3>
+                    <p>HubSpot, Zapier, n8n workflows saving 20+ hours monthly</p>
+                    <div class="expertise-count">15+ Workflows</div>
+                </div>
+                
+                <div class="expertise-card">
+                    <div class="expertise-icon">✍️</div>
+                    <h3>Growth Marketing</h3>
+                    <p>Optimising marketing & sales funnels for best results</p>
+                    <div class="expertise-count">$50k+ client revenue</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section - Compact Grid Design -->
+    <section class="certifications fade-in-element" id="certifications">
+        <div class="container">
+            <div class="section-header">
+                <h2>Certifications & Training</h2>
+                <p class="section-subtitle">12+ certifications from top institutions</p>
+            </div>
+            
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">🎓</div>
+                    <div class="cert-content">
+                        <h4>LinkedIn Certified Marketing Insider</h4>
+                        <p>LinkedIn Marketing Labs</p>
+                    </div>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">📈</div>
+                    <div class="cert-content">
+                        <h4>Growth Marketing Foundations</h4>
+                        <p>LinkedIn</p>
+                    </div>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">🔍</div>
+                    <div class="cert-content">
+                        <h4>The Fundamentals of Digital Marketing</h4>
+                        <p>Google</p>
+                    </div>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">🚀</div>
+                    <div class="cert-content">
+                        <h4>Digital Marketing Certified</h4>
+                        <p>HubSpot</p>
+                    </div>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">🤖</div>
+                    <div class="cert-content">
+                        <h4>Generative AI Mastermind</h4>
+                        <p>Outskill</p>
+                    </div>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">📝</div>
+                    <div class="cert-content">
+                        <h4>The Strategy of Content Marketing</h4>
+                        <p>University of California, Davis</p>
+                    </div>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">👤</div>
+                    <div class="cert-content">
+                        <h4>Introduction to Personal Branding</h4>
+                        <p>University of Virginia</p>
+                    </div>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">💡</div>
+                    <div class="cert-content">
+                        <h4>Personality Types at Work</h4>
+                        <p>University of Florida</p>
+                    </div>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">📱</div>
+                    <div class="cert-content">
+                        <h4>Advanced Social Media Strategy</h4>
+                        <p>Crack Those Socials</p>
+                    </div>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">🧠</div>
+                    <div class="cert-content">
+                        <h4>Introduction to Psychology</h4>
+                        <p>Yale University</p>
+                    </div>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">✏️</div>
+                    <div class="cert-content">
+                        <h4>Writers Training Program</h4>
+                        <p>Pepper Content</p>
+                    </div>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">🌟</div>
+                    <div class="cert-content">
+                        <h4>Life Coach Practitioner Diploma</h4>
+                        <p>The Academy of Modern Applied Psychology</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- n8n Automation Showcase with Real Projects -->
+    <section class="automation-showcase fade-in-element" id="automations">
+        <div class="container">
+            <div class="section-header">
+                <h2>n8n Automation Magic</h2>
+                <p class="section-subtitle">AI-powered workflows that work while you sleep</p>
+            </div>
+            
+            <div class="automation-grid">
+                <!-- Automation 1: Content Strategist -->
+                <div class="automation-card">
+                    <div class="automation-placeholder">Automation Image Coming Soon</div>
+                    <h3 class="automation-title">AI Content Strategist</h3>
+                    <p class="automation-description">Analyzes your past posts to generate strategic content recommendations</p>
+                    
+                    <div class="automation-features">
+                        <div class="feature-item">Analyzes post performance metrics</div>
+                        <div class="feature-item">Identifies content patterns</div>
+                        <div class="feature-item">Generates topic suggestions</div>
+                        <div class="feature-item">Creates content calendar</div>
+                    </div>
+                    
+                    <div class="automation-tags">
+                        <span class="tag">n8n</span>
+                        <span class="tag">OpenAI</span>
+                        <span class="tag">Analytics</span>
+                    </div>
+                </div>
+                
+                <!-- Automation 2: Multi-Platform Content -->
+                <div class="automation-card">
+                    <div class="automation-placeholder">Automation Image Coming Soon</div>
+                    <h3 class="automation-title">Team Content Workflow</h3>
+                    <p class="automation-description">Multi-platform publishing with team approval workflows</p>
+                    
+                    <div class="automation-features">
+                        <div class="feature-item">One-click to 5+ platforms</div>
+                        <div class="feature-item">Human review checkpoints</div>
+                        <div class="feature-item">Platform-specific optimization</div>
+                        <div class="feature-item">Team collaboration features</div>
+                    </div>
+                    
+                    <div class="automation-tags">
+                        <span class="tag">n8n</span>
+                        <span class="tag">Slack</span>
+                        <span class="tag">Buffer</span>
+                    </div>
+                </div>
+                
+                <!-- Automation 3: Landing Page Analyzer -->
+                <div class="automation-card">
+                    <div class="automation-placeholder">Automation Image Coming Soon</div>
+                    <h3 class="automation-title">Landing Page Optimizer</h3>
+                    <p class="automation-description">AI-powered landing page analysis with Gemini integration</p>
+                    
+                    <div class="automation-features">
+                        <div class="feature-item">Real-time page analysis</div>
+                        <div class="feature-item">SEO recommendations</div>
+                        <div class="feature-item">Conversion optimization tips</div>
+                        <div class="feature-item">Competitor comparison</div>
+                    </div>
+                    
+                    <div class="automation-tags">
+                        <span class="tag">n8n</span>
+                        <span class="tag">Gemini AI</span>
+                        <span class="tag">SEO</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies with Real Data -->
+    <section class="case-studies fade-in-element" id="case-studies">
+        <div class="container">
+            <div class="section-header">
+                <h2>Real Results, Real Impact</h2>
+                <p class="section-subtitle">Case studies that speak louder than promises</p>
+            </div>
+            
+            <div class="case-studies-grid">
+                <!-- Case Study 1: Lauren Plante -->
+                <div class="case-study-card">
+                    <div class="case-study-header">
+                        <span class="case-study-badge">LINKEDIN EVENT STRATEGY</span>
+                        <h3 class="case-study-title">$8,400 Client in 30 Days!</h3>
+                        <p class="case-study-subtitle">Mindset & Life Coach - Florida, USA</p>
+                    </div>
+                    <div class="case-study-content">
+                        <p class="case-study-description">
+                            Transformed LinkedIn presence for a life coach, implementing event funnel strategy that converted to high-ticket program sales.
+                        </p>
+                        <div class="case-study-metrics">
+                            <div class="metric">
+                                <div class="metric-number">16K+</div>
+                                <div class="metric-label">Impressions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-number">70+</div>
+                                <div class="metric-label">Event Attendees</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-number">14X</div>
+                                <div class="metric-label">Profile Views</div>
+                            </div>
+                        </div>
+                        <div class="case-study-results">
+                            💰 Result: $8,400 client after workshop
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Case Study 2: Carlo Fortugno -->
+                <div class="case-study-card">
+                    <div class="case-study-header">
+                        <span class="case-study-badge">B2B LEAD GENERATION</span>
+                        <h3 class="case-study-title">Mining B2B Deals in the Inbox</h3>
+                        <p class="case-study-subtitle">DustAct - Mining Technology Startup</p>
+                    </div>
+                    <div class="case-study-content">
+                        <p class="case-study-description">
+                            Positioned CEO as thought leader in niche mining industry, generating qualified B2B leads through strategic content.
+                        </p>
+                        <div class="case-study-metrics">
+                            <div class="metric">
+                                <div class="metric-number">21K+</div>
+                                <div class="metric-label">Impressions</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-number">10X</div>
+                                <div class="metric-label">Search Views</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-number">7+</div>
+                                <div class="metric-label">Qualified Leads</div>
+                            </div>
+                        </div>
+                        <div class="case-study-results">
+                            📈 Long-term client with consistent ROI
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Case Study 3: Mompreneur -->
+                <div class="case-study-card">
+                    <div class="case-study-header">
+                        <span class="case-study-badge">PERSONAL BRANDING</span>
+                        <h3 class="case-study-title">From 998 to 1375 Followers</h3>
+                        <p class="case-study-subtitle">B2B Writer - Sustainability Niche</p>
+                    </div>
+                    <div class="case-study-content">
+                        <p class="case-study-description">
+                            Built complete LinkedIn system for mompreneur before maternity leave, generating 3+ daily inquiries.
+                        </p>
+                        <div class="case-study-metrics">
+                            <div class="metric">
+                                <div class="metric-number">38%</div>
+                                <div class="metric-label">Growth</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-number">3+</div>
+                                <div class="metric-label">Daily Leads</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-number">367%</div>
+                                <div class="metric-label">Profile Views ↑</div>
+                            </div>
+                        </div>
+                        <div class="case-study-results">
+                            🎯 Achieved goals in just 2 months
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Case Study 4: Process Specialist -->
+                <div class="case-study-card">
+                    <div class="case-study-header">
+                        <span class="case-study-badge">THOUGHT LEADERSHIP</span>
+                        <h3 class="case-study-title">44K Monthly Impressions</h3>
+                        <p class="case-study-subtitle">Agency Operations Specialist</p>
+                    </div>
+                    <div class="case-study-content">
+                        <p class="case-study-description">
+                            Curated relevant audience and built sustainable content system for agency operations expert with minimal time input.
+                        </p>
+                        <div class="case-study-metrics">
+                            <div class="metric">
+                                <div class="metric-number">44K</div>
+                                <div class="metric-label">Impressions/mo</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-number">285%</div>
+                                <div class="metric-label">Search Views ↑</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-number">164%</div>
+                                <div class="metric-label">Profile Views ↑</div>
+                            </div>
+                        </div>
+                        <div class="case-study-results">
+                            🔄 Sustainable, low-maintenance system
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="brands fade-in-element" id="brands">
+        <div class="container">
+            <div class="section-header">
+                <h2>Brands That Trusted Me</h2>
+            </div>
+            
+            <div class="client-logos">
+                <img src="TimelineCycle (2).png" alt="Client Timeline" style="max-width: 100%; height: auto;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Animated Testimonials -->
+    <section class="testimonials fade-in-element" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Clients Say</h2>
+                <p class="section-subtitle">Don't just take my word for it</p>
+            </div>
+            
+            <div class="testimonials-container">
+                <div class="testimonials-track">
+                    <!-- Real Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★ ★ ★ ★ ★</div>
+                        <p class="testimonial-text">
+                            "Rarely do you find someone who knows what they're doing AND makes the process effortless. 
+                            Shrishti automated our entire LinkedIn funnel. Highly recommend!"
+                        </p>
+                        <h4 class="testimonial-author">Carlo Fortugno</h4>
+                        <p class="testimonial-role">CEO, DustAct</p>
+                    </div>
+                    
+                    <!-- Real Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★ ★ ★ ★ ★</div>
+                        <p class="testimonial-text">
+                            "I trust her fully and she digs deep to fully understand your business. 
+                            Grateful for her work, it makes my life so much easier!"
+                        </p>
+                        <h4 class="testimonial-author">Lauren Plante</h4>
+                        <p class="testimonial-role">Mindset and Life Coach</p>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★ ★ ★ ★ ★</div>
+                        <p class="testimonial-text">
+                            "One of the BEST decisions I made! I would recommend her to those who have 
+                            A LOT on their plate and could use some serious help"
+                        </p>
+                        <h4 class="testimonial-author">Dr. Prachi Khandekar</h4>
+                        <p class="testimonial-role">Linguistics Expert</p>
+                    </div>
+                    
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★ ★ ★ ★ ★</div>
+                        <p class="testimonial-text">
+                            "Shrishti's strategic approach to LinkedIn completely transformed our lead generation. 
+                            The ROI speaks for itself - we're still working together!"
+                        </p>
+                        <h4 class="testimonial-author">Agency Owner</h4>
+                        <p class="testimonial-role">Process Specialist</p>
+                    </div>
+                    
+                    <!-- Testimonial 5 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★ ★ ★ ★ ★</div>
+                        <p class="testimonial-text">
+                            "She set up everything before my maternity leave - content calendars, networking scripts, 
+                            automation. I came back to a thriving business!"
+                        </p>
+                        <h4 class="testimonial-author">B2B Writer</h4>
+                        <p class="testimonial-role">Sustainability Expert</p>
+                    </div>
+                    
+                    <!-- Duplicate for continuous scroll -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★ ★ ★ ★ ★</div>
+                        <p class="testimonial-text">
+                            "Rarely do you find someone who knows what they're doing AND makes the process effortless. 
+                            Shrishti automated our entire LinkedIn funnel. Highly recommend!"
+                        </p>
+                        <h4 class="testimonial-author">Carlo Fortugno</h4>
+                        <p class="testimonial-role">CEO, DustAct</p>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★ ★ ★ ★ ★</div>
+                        <p class="testimonial-text">
+                            "I trust her fully and she digs deep to fully understand your business. 
+                            Grateful for her work, it makes my life so much easier!"
+                        </p>
+                        <h4 class="testimonial-author">Lauren Plante</h4>
+                        <p class="testimonial-role">Mindset and Life Coach</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="portfolio-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to See These Results for Your Business?</h2>
+                <p style="font-size: 1.2rem; margin: 1.5rem 0 2rem; color: var(--text-secondary);">
+                    Let's discuss how AI-first marketing automation can transform your growth
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://topmate.io/shrishtisnagar/1742503" class="btn-primary">Book Your Strategy Call</a>
+                    <a href="https://calendly.com/shrishtisnagar/1-1-clarity-call-with-shrishti" class="btn-secondary">Get Custom Automation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo" style="justify-content: center; font-size: 2rem; margin-bottom: 1rem;">
+                <img src="logo.png" alt="The S Curve Logo" style="height: 40px; margin-right: 10px;">
+                The S Curve
+            </div>
+            <p style="opacity: 0.6; margin-top: 0.5rem;">Proudly serving Global Clients from India</p>
+            
+            <div class="social-links">
+                <a href="https://linkedin.com/in/shrishtisnagar" target="_blank">in</a>
+                <a href="mailto:shrishtisnagar@gmail.com">@</a>
+            </div>
+            
+            <p style="opacity: 0.6; font-size: 0.875rem; margin-top: 2rem;">
+                © 2025 The S Curve | Shrishti S Nagar. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Generate stars
+        const starsContainer = document.getElementById('stars');
+        const numStars = 150;
+        
+        for (let i = 0; i < numStars; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            
+            const size = Math.random() * 2 + 0.5;
+            star.style.width = size + 'px';
+            star.style.height = size + 'px';
+            
+            starsContainer.appendChild(star);
+        }
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-in-element').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Parallax effect (desktop only)
+        if (window.innerWidth > 768) {
+            document.addEventListener('mousemove', (e) => {
+                const x = e.clientX / window.innerWidth;
+                const y = e.clientY / window.innerHeight;
+                
+                document.querySelector('.nebula').style.transform = `translate(${x * 20}px, ${y * 20}px)`;
+                document.querySelector('.stars').style.transform = `translate(${x * -10}px, ${y * -10}px)`;
+            });
+        }
+    </script>
+</body>
+</html>
