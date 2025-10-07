@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio - Shrishti S Nagar | Marketing Strategist & Automation Expert. View case studies, certifications, and client results.">
+    <meta name="description" content="Portfolio - Shrishti S Nagar | Marketing Strategist & Automation Expert. View case studies and client results.">
     <title>Portfolio - The S Curve | Shrishti S Nagar</title>
     
     <!-- FAVICON -->
@@ -38,6 +38,8 @@
             --cosmic-gradient: linear-gradient(135deg, #c874b2 0%, #f5d5e0 100%);
             --subtle-glow: rgba(200, 116, 178, 0.5);
             --success-green: #4CAF50;
+            --highlight-green: #00FF88;
+            --highlight-blue: #00D4FF;
         }
         
         body {
@@ -433,18 +435,6 @@
             z-index: 2;
         }
         
-        .profile-ring {
-            position: absolute;
-            top: -15px;
-            left: -15px;
-            right: -15px;
-            bottom: -15px;
-            border: 2px dashed var(--accent-light);
-            border-radius: 50%;
-            animation: rotate 20s linear infinite;
-            opacity: 0.5;
-        }
-        
         .about-me-text h2 {
             font-family: 'Poppins', sans-serif;
             font-size: 2.5rem;
@@ -536,8 +526,8 @@
             max-width: 600px;
             margin: 0 auto;
         }
-        
-        /* Certifications - Table Design */
+
+        /* Smaller Certifications Table */
         .certifications {
             background: rgba(20, 20, 40, 0.3);
         }
@@ -548,12 +538,15 @@
             background: rgba(20, 20, 40, 0.4);
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .cert-table {
             width: 100%;
             border-collapse: collapse;
-            min-width: 600px;
+            min-width: 500px;
         }
         
         .cert-table thead {
@@ -562,12 +555,12 @@
         }
         
         .cert-table th {
-            padding: 1.25rem 1rem;
+            padding: 1rem 0.75rem;
             text-align: left;
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
             color: var(--accent-light);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -583,24 +576,14 @@
         }
         
         .cert-table td {
-            padding: 1rem;
+            padding: 0.75rem;
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
         
         .cert-table td:first-child {
             font-weight: 600;
             color: var(--text-primary);
-        }
-        
-        .cert-category {
-            display: inline-block;
-            padding: 0.2rem 0.6rem;
-            background: rgba(200, 116, 178, 0.2);
-            border: 1px solid var(--accent-primary);
-            border-radius: 12px;
-            font-size: 0.75rem;
-            color: var(--accent-light);
         }
         
         /* Mobile scroll indicator */
@@ -702,23 +685,7 @@
             font-weight: bold;
         }
         
-        .automation-tags {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 1rem;
-        }
-        
-        .tag {
-            background: rgba(200, 116, 178, 0.2);
-            border: 1px solid var(--accent-primary);
-            padding: 0.2rem 0.5rem;
-            border-radius: 20px;
-            font-size: 0.7rem;
-        }
-        
-        /* Case Studies */
+        /* Case Studies with Enhanced Numbers */
         .case-studies-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -790,10 +757,17 @@
             text-align: center;
         }
         
+        /* Enhanced metric numbers with better contrast */
         .metric-number {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--accent-primary);
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--highlight-green) 0%, var(--highlight-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+            display: block;
+            margin-bottom: 0.25rem;
         }
         
         .metric-label {
@@ -801,14 +775,20 @@
             color: var(--text-secondary);
         }
         
-        .case-study-results {
-            background: rgba(200, 116, 178, 0.1);
-            padding: 0.75rem;
+        .case-study-highlight {
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            padding: 1rem;
             border-radius: 8px;
             margin-top: 1rem;
-            font-size: 0.875rem;
             text-align: center;
-            color: var(--accent-light);
+        }
+        
+        .highlight-amount {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--highlight-green);
+            text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
         }
         
         /* Fixed Testimonials for Mobile */
@@ -1216,7 +1196,7 @@
         </div>
     </section>
 
-    <!-- Certifications Section - Table Design -->
+    <!-- Certifications Section - Smaller Table -->
     <section class="certifications fade-in-element" id="certifications">
         <div class="container">
             <div class="section-header">
@@ -1229,69 +1209,56 @@
                         <tr>
                             <th>Certification</th>
                             <th>Institution</th>
-                            <th>Category</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>LinkedIn Certified Marketing Insider</td>
                             <td>LinkedIn Marketing Labs</td>
-                            <td><span class="cert-category">Marketing</span></td>
                         </tr>
                         <tr>
                             <td>Growth Marketing Foundations</td>
                             <td>LinkedIn</td>
-                            <td><span class="cert-category">Growth</span></td>
                         </tr>
                         <tr>
                             <td>The Fundamentals of Digital Marketing</td>
                             <td>Google</td>
-                            <td><span class="cert-category">Digital Marketing</span></td>
                         </tr>
                         <tr>
                             <td>Digital Marketing Certified</td>
                             <td>HubSpot</td>
-                            <td><span class="cert-category">Marketing</span></td>
                         </tr>
                         <tr>
                             <td>Generative AI Mastermind</td>
                             <td>Outskill</td>
-                            <td><span class="cert-category">AI/Tech</span></td>
                         </tr>
                         <tr>
                             <td>The Strategy of Content Marketing</td>
                             <td>University of California, Davis</td>
-                            <td><span class="cert-category">Content</span></td>
                         </tr>
                         <tr>
                             <td>Introduction to Personal Branding</td>
                             <td>University of Virginia</td>
-                            <td><span class="cert-category">Branding</span></td>
                         </tr>
                         <tr>
                             <td>Personality Types at Work</td>
                             <td>University of Florida</td>
-                            <td><span class="cert-category">Psychology</span></td>
                         </tr>
                         <tr>
                             <td>Advanced Social Media Strategy</td>
                             <td>Crack Those Socials</td>
-                            <td><span class="cert-category">Social Media</span></td>
                         </tr>
                         <tr>
                             <td>Introduction to Psychology</td>
                             <td>Yale University</td>
-                            <td><span class="cert-category">Psychology</span></td>
                         </tr>
                         <tr>
                             <td>Writers Training Program</td>
                             <td>Pepper Content</td>
-                            <td><span class="cert-category">Writing</span></td>
                         </tr>
                         <tr>
                             <td>Life Coach Practitioner Diploma</td>
                             <td>The Academy of Modern Applied Psychology</td>
-                            <td><span class="cert-category">Coaching</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -1300,7 +1267,7 @@
         </div>
     </section>
 
-    <!-- n8n Automation Showcase with Fixed Image Sizing -->
+    <!-- n8n Automation Showcase without tags -->
     <section class="automation-showcase fade-in-element" id="automations">
         <div class="container">
             <div class="section-header">
@@ -1322,12 +1289,6 @@
                         <div class="feature-item">Generates topic suggestions</div>
                         <div class="feature-item">Creates content calendar</div>
                     </div>
-                    
-                    <div class="automation-tags">
-                        <span class="tag">n8n</span>
-                        <span class="tag">Gemini</span>
-                        <span class="tag">Google Sheets</span>
-                    </div>
                 </div>
                 
                 <!-- Automation 2: Multi-Platform Content -->
@@ -1343,12 +1304,6 @@
                         <div class="feature-item">Human review checkpoints</div>
                         <div class="feature-item">Platform-specific optimization</div>
                         <div class="feature-item">Team collaboration features</div>
-                    </div>
-                    
-                    <div class="automation-tags">
-                        <span class="tag">n8n</span>
-                        <span class="tag">Google Sheets</span>
-                        <span class="tag">Platform APIs</span>
                     </div>
                 </div>
                 
@@ -1366,18 +1321,12 @@
                         <div class="feature-item">Conversion optimization tips</div>
                         <div class="feature-item">Competitor comparison</div>
                     </div>
-                    
-                    <div class="automation-tags">
-                        <span class="tag">n8n</span>
-                        <span class="tag">Gemini AI</span>
-                        <span class="tag">CRO</span>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Case Studies with Real Data -->
+    <!-- Case Studies with Enhanced Numbers -->
     <section class="case-studies fade-in-element" id="case-studies">
         <div class="container">
             <div class="section-header">
@@ -1410,8 +1359,8 @@
                                 <div class="metric-label">Profile Views</div>
                             </div>
                         </div>
-                        <div class="case-study-results">
-                            💰 Result: $8,400 client after workshop
+                        <div class="case-study-highlight">
+                            <span class="highlight-amount">$8,400</span> client secured
                         </div>
                     </div>
                 </div>
@@ -1441,8 +1390,8 @@
                                 <div class="metric-label">Qualified Leads</div>
                             </div>
                         </div>
-                        <div class="case-study-results">
-                            📈 Long-term client with consistent ROI
+                        <div class="case-study-highlight">
+                            Long-term client with consistent ROI
                         </div>
                     </div>
                 </div>
@@ -1472,8 +1421,8 @@
                                 <div class="metric-label">Profile Views ↑</div>
                             </div>
                         </div>
-                        <div class="case-study-results">
-                            🎯 Achieved goals in just 2 months
+                        <div class="case-study-highlight">
+                            Goals achieved in just <span class="highlight-amount">2 months</span>
                         </div>
                     </div>
                 </div>
@@ -1503,8 +1452,8 @@
                                 <div class="metric-label">Profile Views ↑</div>
                             </div>
                         </div>
-                        <div class="case-study-results">
-                            🔄 Sustainable, low-maintenance system
+                        <div class="case-study-highlight">
+                            Sustainable, low-maintenance system
                         </div>
                     </div>
                 </div>
@@ -1714,5 +1663,3 @@
     </script>
 </body>
 </html>
-
-
