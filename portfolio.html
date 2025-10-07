@@ -265,7 +265,7 @@
         
         .portfolio-hero h1 {
             font-family: 'Poppins', sans-serif;
-            font-size: clamp(2rem, 4.5vw, 3.5rem);
+            font-size: clamp(1.5rem, 4vw, 3rem);
             font-weight: 700;
             line-height: 1.3;
             margin-bottom: 0;
@@ -484,69 +484,7 @@
             color: var(--text-primary);
         }
         
-        /* Tools Section - NEW */
-        .tools-section {
-            padding: 60px 0;
-        }
-        
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .tool-category {
-            background: rgba(20, 20, 40, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 1.5rem;
-            transition: all 0.3s;
-        }
-        
-        .tool-category:hover {
-            border-color: var(--accent-primary);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(200, 116, 178, 0.2);
-        }
-        
-        .tool-category h3 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.1rem;
-            color: var(--accent-primary);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .tool-category h3::before {
-            content: '⚡';
-            font-size: 1.2rem;
-        }
-        
-        .tool-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        
-        .tool-item {
-            background: rgba(200, 116, 178, 0.1);
-            border: 1px solid rgba(200, 116, 178, 0.3);
-            padding: 0.3rem 0.7rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            transition: all 0.2s;
-        }
-        
-        .tool-item:hover {
-            background: rgba(200, 116, 178, 0.2);
-            color: var(--text-primary);
-            transform: scale(1.05);
-        }
-        
+                
         /* Automation Showcase - Simplified */
         .automation-showcase {
             background: rgba(20, 20, 40, 0.3);
@@ -1191,85 +1129,6 @@
         </div>
     </section>
 
-    <!-- Tools Section - NEW -->
-    <section class="tools-section fade-in-element" id="tools">
-        <div class="container">
-            <div class="section-header">
-                <h2>Tech Stack & Tools</h2>
-            </div>
-            
-            <div class="tools-grid">
-                <div class="tool-category">
-                    <h3>Marketing & Ad Platforms</h3>
-                    <div class="tool-list">
-                        <span class="tool-item">Meta Business Suite</span>
-                        <span class="tool-item">LinkedIn Campaign Manager</span>
-                        <span class="tool-item">Google Ads Manager</span>
-                    </div>
-                </div>
-                
-                <div class="tool-category">
-                    <h3>SEO & Analytics</h3>
-                    <div class="tool-list">
-                        <span class="tool-item">Semrush</span>
-                        <span class="tool-item">Ubersuggest</span>
-                        <span class="tool-item">Google Analytics</span>
-                    </div>
-                </div>
-                
-                <div class="tool-category">
-                    <h3>AI Platforms & Tools</h3>
-                    <div class="tool-list">
-                        <span class="tool-item">ChatGPT</span>
-                        <span class="tool-item">Claude</span>
-                        <span class="tool-item">Grok</span>
-                        <span class="tool-item">Gemini</span>
-                        <span class="tool-item">Poe</span>
-                        <span class="tool-item">character.ai</span>
-                        <span class="tool-item">Gamma</span>
-                    </div>
-                </div>
-                
-                <div class="tool-category">
-                    <h3>Marketing Automation & CRM</h3>
-                    <div class="tool-list">
-                        <span class="tool-item">HubSpot</span>
-                        <span class="tool-item">Apollo</span>
-                        <span class="tool-item">Mailchimp</span>
-                        <span class="tool-item">Freshworks</span>
-                        <span class="tool-item">Expandi</span>
-                        <span class="tool-item">Snov.io</span>
-                        <span class="tool-item">Zapier</span>
-                        <span class="tool-item">n8n</span>
-                    </div>
-                </div>
-                
-                <div class="tool-category">
-                    <h3>Project & Workflow Management</h3>
-                    <div class="tool-list">
-                        <span class="tool-item">ClickUp</span>
-                        <span class="tool-item">Notion</span>
-                        <span class="tool-item">Asana</span>
-                        <span class="tool-item">Trello</span>
-                        <span class="tool-item">Whimsical</span>
-                    </div>
-                </div>
-                
-                <div class="tool-category">
-                    <h3>Content & Creative Tools</h3>
-                    <div class="tool-list">
-                        <span class="tool-item">Canva</span>
-                        <span class="tool-item">Loom</span>
-                        <span class="tool-item">Adobe Premiere Pro</span>
-                        <span class="tool-item">WordPress</span>
-                        <span class="tool-item">Beehiiv</span>
-                        <span class="tool-item">Tweethunter</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- n8n Automation Showcase - Without Tags -->
     <section class="automation-showcase fade-in-element" id="automations">
         <div class="container">
@@ -1654,3 +1513,4 @@
     </script>
 </body>
 </html>
+
