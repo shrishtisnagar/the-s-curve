@@ -414,158 +414,80 @@
             margin: 0 auto;
         }
         
-        /* Expertise Section */
-        .expertise-section {
-            background: transparent;
-        }
-        
-        .expertise-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-        
-        .expertise-card {
-            background: rgba(20, 20, 40, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            text-align: center;
-            border-radius: 8px;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-        
-        .expertise-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--accent-primary);
-            opacity: 0.1;
-            transition: left 0.3s;
-        }
-        
-        .expertise-card:hover::before {
-            left: 0;
-        }
-        
-        .expertise-card:hover {
-            border-color: var(--accent-primary);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(200, 116, 178, 0.2);
-        }
-        
-        .expertise-icon {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .expertise-card h3 {
-            font-family: 'Poppins', sans-serif;
-            margin-bottom: 0.5rem;
-        }
-        
-        .expertise-card p {
-            margin-bottom: auto;
-            padding-bottom: 1rem;
-        }
-        
-        .expertise-count {
-            background: var(--accent-primary);
-            color: var(--text-primary);
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            display: inline-block;
-        }
-        
-        /* Certifications - Professional Design without emojis */
+        /* Certifications - Table Design */
         .certifications {
             background: rgba(20, 20, 40, 0.3);
         }
         
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1rem;
+        .cert-table-wrapper {
+            overflow-x: auto;
             margin-top: 2rem;
-        }
-        
-        .cert-card {
-            background: rgba(20, 20, 40, 0.6);
+            background: rgba(20, 20, 40, 0.4);
+            border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 1rem 1.25rem;
-            border-radius: 8px;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
         }
         
-        .cert-card::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 3px;
-            height: 100%;
-            background: var(--accent-primary);
-            transform: scaleY(0);
-            transition: transform 0.3s;
+        .cert-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
         }
         
-        .cert-card:hover::before {
-            transform: scaleY(1);
+        .cert-table thead {
+            background: rgba(200, 116, 178, 0.1);
+            border-bottom: 2px solid var(--accent-primary);
         }
         
-        .cert-card:hover {
-            border-color: var(--accent-primary);
-            transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(200, 116, 178, 0.15);
-        }
-        
-        .cert-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--cosmic-gradient);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            font-size: 1rem;
-            color: var(--cosmos-dark);
-            font-weight: 700;
+        .cert-table th {
+            padding: 1.25rem 1rem;
+            text-align: left;
             font-family: 'Poppins', sans-serif;
-        }
-        
-        .cert-content {
-            flex: 1;
-        }
-        
-        .cert-content h4 {
-            font-size: 0.9rem;
-            margin-bottom: 0.25rem;
-            color: var(--text-primary);
             font-weight: 600;
+            color: var(--accent-light);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
-        .cert-content p {
+        .cert-table tbody tr {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s;
+        }
+        
+        .cert-table tbody tr:hover {
+            background: rgba(200, 116, 178, 0.05);
+            transform: translateX(5px);
+        }
+        
+        .cert-table td {
+            padding: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .cert-table td:first-child {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .cert-category {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            background: rgba(200, 116, 178, 0.2);
+            border: 1px solid var(--accent-primary);
+            border-radius: 12px;
+            font-size: 0.75rem;
+            color: var(--accent-light);
+        }
+        
+        /* Mobile scroll indicator */
+        .scroll-hint {
+            display: none;
+            text-align: center;
+            margin-top: 0.5rem;
             font-size: 0.75rem;
             color: var(--text-secondary);
+            opacity: 0.7;
         }
         
         /* Automation Showcase - Fixed image sizing */
@@ -766,19 +688,21 @@
             color: var(--accent-light);
         }
         
-        /* Animated Testimonials */
+        /* Fixed Testimonials for Mobile */
         .testimonials-container {
             position: relative;
-            height: 300px;
             overflow: hidden;
             background: rgba(20, 20, 40, 0.3);
             border-radius: 12px;
             padding: 2rem;
+            height: auto;
+            min-height: 300px;
         }
         
         .testimonials-track {
             display: flex;
             animation: scroll 30s linear infinite;
+            gap: 2rem;
         }
         
         @keyframes scroll {
@@ -796,9 +720,9 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             padding: 2rem;
-            margin-right: 2rem;
             border-radius: 8px;
             position: relative;
+            flex-shrink: 0;
         }
         
         .testimonial-card::before {
@@ -1004,7 +928,6 @@
                 height: 200px;
             }
             
-            .expertise-grid,
             .automation-grid {
                 grid-template-columns: 1fr;
             }
@@ -1017,8 +940,38 @@
                 grid-template-columns: 1fr;
             }
             
+            /* Fixed mobile testimonials */
+            .testimonials-container {
+                padding: 1rem;
+                min-height: 250px;
+            }
+            
             .testimonial-card {
-                min-width: 300px;
+                min-width: 280px;
+                padding: 1.5rem;
+            }
+            
+            .testimonial-card::before {
+                font-size: 3rem;
+            }
+            
+            .testimonial-text {
+                font-size: 0.9rem;
+            }
+            
+            /* Show scroll hint on mobile for table */
+            .scroll-hint {
+                display: block;
+            }
+            
+            .cert-table-wrapper {
+                border-radius: 8px;
+            }
+            
+            .cert-table th,
+            .cert-table td {
+                padding: 0.75rem 0.5rem;
+                font-size: 0.8rem;
             }
             
             .nav-links {
@@ -1032,10 +985,6 @@
             .btn-primary, .btn-secondary {
                 width: 100%;
                 max-width: 300px;
-            }
-            
-            .cert-grid {
-                grid-template-columns: 1fr;
             }
         }
         
@@ -1124,142 +1073,87 @@
         </div>
     </section>
 
-    <!-- My Expertise Section -->
-    <section class="expertise-section fade-in-element" id="expertise">
-        <div class="container">
-            <div class="section-header">
-                <h2>My Expertise</h2>
-            </div>
-            
-            <div class="expertise-grid">
-                <div class="expertise-card">
-                    <div class="expertise-icon">💼</div>
-                    <h3>Marketing Strategy</h3>
-                    <p>Organic + Paid Marketing and automated outreach</p>
-                    <div class="expertise-count">25+ Projects</div>
-                </div>
-
-                <div class="expertise-card">
-                    <div class="expertise-icon">⚡</div>
-                    <h3>Marketing Automation</h3>
-                    <p>HubSpot, Zapier, n8n workflows saving 20+ hours monthly</p>
-                    <div class="expertise-count">15+ Workflows</div>
-                </div>
-                
-                <div class="expertise-card">
-                    <div class="expertise-icon">✍️</div>
-                    <h3>Growth Marketing</h3>
-                    <p>Optimising marketing & sales funnels for best results</p>
-                    <div class="expertise-count">$50k+ client revenue</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications Section - Professional Design -->
+    <!-- Certifications Section - Table Design -->
     <section class="certifications fade-in-element" id="certifications">
         <div class="container">
             <div class="section-header">
                 <h2>Certifications & Training</h2>
             </div>
             
-            <div class="cert-grid">
-                <div class="cert-card">
-                    <div class="cert-icon">L</div>
-                    <div class="cert-content">
-                        <h4>LinkedIn Certified Marketing Insider</h4>
-                        <p>LinkedIn Marketing Labs</p>
-                    </div>
-                </div>
-                
-                <div class="cert-card">
-                    <div class="cert-icon">G</div>
-                    <div class="cert-content">
-                        <h4>Growth Marketing Foundations</h4>
-                        <p>LinkedIn</p>
-                    </div>
-                </div>
-                
-                <div class="cert-card">
-                    <div class="cert-icon">G</div>
-                    <div class="cert-content">
-                        <h4>The Fundamentals of Digital Marketing</h4>
-                        <p>Google</p>
-                    </div>
-                </div>
-                
-                <div class="cert-card">
-                    <div class="cert-icon">H</div>
-                    <div class="cert-content">
-                        <h4>Digital Marketing Certified</h4>
-                        <p>HubSpot</p>
-                    </div>
-                </div>
-                
-                <div class="cert-card">
-                    <div class="cert-icon">AI</div>
-                    <div class="cert-content">
-                        <h4>Generative AI Mastermind</h4>
-                        <p>Outskill</p>
-                    </div>
-                </div>
-                
-                <div class="cert-card">
-                    <div class="cert-icon">UC</div>
-                    <div class="cert-content">
-                        <h4>The Strategy of Content Marketing</h4>
-                        <p>University of California, Davis</p>
-                    </div>
-                </div>
-                
-                <div class="cert-card">
-                    <div class="cert-icon">UV</div>
-                    <div class="cert-content">
-                        <h4>Introduction to Personal Branding</h4>
-                        <p>University of Virginia</p>
-                    </div>
-                </div>
-                
-                <div class="cert-card">
-                    <div class="cert-icon">UF</div>
-                    <div class="cert-content">
-                        <h4>Personality Types at Work</h4>
-                        <p>University of Florida</p>
-                    </div>
-                </div>
-                
-                <div class="cert-card">
-                    <div class="cert-icon">S</div>
-                    <div class="cert-content">
-                        <h4>Advanced Social Media Strategy</h4>
-                        <p>Crack Those Socials</p>
-                    </div>
-                </div>
-                
-                <div class="cert-card">
-                    <div class="cert-icon">Y</div>
-                    <div class="cert-content">
-                        <h4>Introduction to Psychology</h4>
-                        <p>Yale University</p>
-                    </div>
-                </div>
-                
-                <div class="cert-card">
-                    <div class="cert-icon">P</div>
-                    <div class="cert-content">
-                        <h4>Writers Training Program</h4>
-                        <p>Pepper Content</p>
-                    </div>
-                </div>
-                
-                <div class="cert-card">
-                    <div class="cert-icon">LC</div>
-                    <div class="cert-content">
-                        <h4>Life Coach Practitioner Diploma</h4>
-                        <p>The Academy of Modern Applied Psychology</p>
-                    </div>
-                </div>
+            <div class="cert-table-wrapper">
+                <table class="cert-table">
+                    <thead>
+                        <tr>
+                            <th>Certification</th>
+                            <th>Institution</th>
+                            <th>Category</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>LinkedIn Certified Marketing Insider</td>
+                            <td>LinkedIn Marketing Labs</td>
+                            <td><span class="cert-category">Marketing</span></td>
+                        </tr>
+                        <tr>
+                            <td>Growth Marketing Foundations</td>
+                            <td>LinkedIn</td>
+                            <td><span class="cert-category">Growth</span></td>
+                        </tr>
+                        <tr>
+                            <td>The Fundamentals of Digital Marketing</td>
+                            <td>Google</td>
+                            <td><span class="cert-category">Digital Marketing</span></td>
+                        </tr>
+                        <tr>
+                            <td>Digital Marketing Certified</td>
+                            <td>HubSpot</td>
+                            <td><span class="cert-category">Marketing</span></td>
+                        </tr>
+                        <tr>
+                            <td>Generative AI Mastermind</td>
+                            <td>Outskill</td>
+                            <td><span class="cert-category">AI/Tech</span></td>
+                        </tr>
+                        <tr>
+                            <td>The Strategy of Content Marketing</td>
+                            <td>University of California, Davis</td>
+                            <td><span class="cert-category">Content</span></td>
+                        </tr>
+                        <tr>
+                            <td>Introduction to Personal Branding</td>
+                            <td>University of Virginia</td>
+                            <td><span class="cert-category">Branding</span></td>
+                        </tr>
+                        <tr>
+                            <td>Personality Types at Work</td>
+                            <td>University of Florida</td>
+                            <td><span class="cert-category">Psychology</span></td>
+                        </tr>
+                        <tr>
+                            <td>Advanced Social Media Strategy</td>
+                            <td>Crack Those Socials</td>
+                            <td><span class="cert-category">Social Media</span></td>
+                        </tr>
+                        <tr>
+                            <td>Introduction to Psychology</td>
+                            <td>Yale University</td>
+                            <td><span class="cert-category">Psychology</span></td>
+                        </tr>
+                        <tr>
+                            <td>Writers Training Program</td>
+                            <td>Pepper Content</td>
+                            <td><span class="cert-category">Writing</span></td>
+                        </tr>
+                        <tr>
+                            <td>Life Coach Practitioner Diploma</td>
+                            <td>The Academy of Modern Applied Psychology</td>
+                            <td><span class="cert-category">Coaching</span></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+            <p class="scroll-hint">← Swipe to see more →</p>
         </div>
     </section>
 
