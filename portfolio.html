@@ -9,7 +9,7 @@
     <!-- FAVICON -->
     <link rel="icon" type="image/png" href="logo.png">
 
- <base target="_blank">
+    <base target="_blank">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -489,7 +489,7 @@
             display: inline-block;
         }
         
-        /* Certifications - Compact Grid Design */
+        /* Certifications - Professional Design without emojis */
         .certifications {
             background: rgba(20, 20, 40, 0.3);
         }
@@ -540,13 +540,16 @@
         .cert-icon {
             width: 40px;
             height: 40px;
-            background: rgba(200, 116, 178, 0.15);
+            background: var(--cosmic-gradient);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            font-size: 1.2rem;
+            font-size: 1rem;
+            color: var(--cosmos-dark);
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
         }
         
         .cert-content {
@@ -565,7 +568,7 @@
             color: var(--text-secondary);
         }
         
-        /* Automation Showcase - with placeholder for images */
+        /* Automation Showcase - Fixed image sizing */
         .automation-showcase {
             background: rgba(20, 20, 40, 0.3);
         }
@@ -593,18 +596,29 @@
             box-shadow: 0 20px 40px rgba(200, 116, 178, 0.2);
         }
         
-        .automation-placeholder {
+        /* Fixed automation image sizing */
+        .automation-image-wrapper {
             width: 100%;
-            height: 120px;
-            background: rgba(200, 116, 178, 0.1);
-            border: 2px dashed rgba(200, 116, 178, 0.3);
+            height: 180px;
+            overflow: hidden;
             border-radius: 8px;
+            margin-bottom: 1rem;
+            background: rgba(200, 116, 178, 0.05);
+            border: 1px solid rgba(200, 116, 178, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1rem;
-            color: var(--text-secondary);
-            font-size: 0.875rem;
+        }
+        
+        .automation-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .automation-card:hover .automation-image {
+            transform: scale(1.05);
         }
         
         .automation-title {
@@ -945,6 +959,19 @@
             transform: translateY(0);
         }
         
+        /* Responsive adjustments for automation images */
+        @media (min-width: 1920px) {
+            .automation-image-wrapper {
+                height: 200px;
+            }
+        }
+        
+        @media (max-width: 1200px) {
+            .automation-image-wrapper {
+                height: 160px;
+            }
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .container {
@@ -980,6 +1007,10 @@
             .expertise-grid,
             .automation-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .automation-image-wrapper {
+                height: 140px;
             }
             
             .case-studies-grid {
@@ -1125,17 +1156,16 @@
         </div>
     </section>
 
-    <!-- Certifications Section - Compact Grid Design -->
+    <!-- Certifications Section - Professional Design -->
     <section class="certifications fade-in-element" id="certifications">
         <div class="container">
             <div class="section-header">
                 <h2>Certifications & Training</h2>
-            
             </div>
             
             <div class="cert-grid">
                 <div class="cert-card">
-                    <div class="cert-icon">🎓</div>
+                    <div class="cert-icon">L</div>
                     <div class="cert-content">
                         <h4>LinkedIn Certified Marketing Insider</h4>
                         <p>LinkedIn Marketing Labs</p>
@@ -1143,7 +1173,7 @@
                 </div>
                 
                 <div class="cert-card">
-                    <div class="cert-icon">📈</div>
+                    <div class="cert-icon">G</div>
                     <div class="cert-content">
                         <h4>Growth Marketing Foundations</h4>
                         <p>LinkedIn</p>
@@ -1151,7 +1181,7 @@
                 </div>
                 
                 <div class="cert-card">
-                    <div class="cert-icon">🔍</div>
+                    <div class="cert-icon">G</div>
                     <div class="cert-content">
                         <h4>The Fundamentals of Digital Marketing</h4>
                         <p>Google</p>
@@ -1159,7 +1189,7 @@
                 </div>
                 
                 <div class="cert-card">
-                    <div class="cert-icon">🚀</div>
+                    <div class="cert-icon">H</div>
                     <div class="cert-content">
                         <h4>Digital Marketing Certified</h4>
                         <p>HubSpot</p>
@@ -1167,7 +1197,7 @@
                 </div>
                 
                 <div class="cert-card">
-                    <div class="cert-icon">🤖</div>
+                    <div class="cert-icon">AI</div>
                     <div class="cert-content">
                         <h4>Generative AI Mastermind</h4>
                         <p>Outskill</p>
@@ -1175,7 +1205,7 @@
                 </div>
                 
                 <div class="cert-card">
-                    <div class="cert-icon">📝</div>
+                    <div class="cert-icon">UC</div>
                     <div class="cert-content">
                         <h4>The Strategy of Content Marketing</h4>
                         <p>University of California, Davis</p>
@@ -1183,7 +1213,7 @@
                 </div>
                 
                 <div class="cert-card">
-                    <div class="cert-icon">👤</div>
+                    <div class="cert-icon">UV</div>
                     <div class="cert-content">
                         <h4>Introduction to Personal Branding</h4>
                         <p>University of Virginia</p>
@@ -1191,7 +1221,7 @@
                 </div>
                 
                 <div class="cert-card">
-                    <div class="cert-icon">💡</div>
+                    <div class="cert-icon">UF</div>
                     <div class="cert-content">
                         <h4>Personality Types at Work</h4>
                         <p>University of Florida</p>
@@ -1199,7 +1229,7 @@
                 </div>
                 
                 <div class="cert-card">
-                    <div class="cert-icon">📱</div>
+                    <div class="cert-icon">S</div>
                     <div class="cert-content">
                         <h4>Advanced Social Media Strategy</h4>
                         <p>Crack Those Socials</p>
@@ -1207,7 +1237,7 @@
                 </div>
                 
                 <div class="cert-card">
-                    <div class="cert-icon">🧠</div>
+                    <div class="cert-icon">Y</div>
                     <div class="cert-content">
                         <h4>Introduction to Psychology</h4>
                         <p>Yale University</p>
@@ -1215,7 +1245,7 @@
                 </div>
                 
                 <div class="cert-card">
-                    <div class="cert-icon">✏️</div>
+                    <div class="cert-icon">P</div>
                     <div class="cert-content">
                         <h4>Writers Training Program</h4>
                         <p>Pepper Content</p>
@@ -1223,7 +1253,7 @@
                 </div>
                 
                 <div class="cert-card">
-                    <div class="cert-icon">🌟</div>
+                    <div class="cert-icon">LC</div>
                     <div class="cert-content">
                         <h4>Life Coach Practitioner Diploma</h4>
                         <p>The Academy of Modern Applied Psychology</p>
@@ -1233,7 +1263,7 @@
         </div>
     </section>
 
-    <!-- n8n Automation Showcase with Real Projects -->
+    <!-- n8n Automation Showcase with Fixed Image Sizing -->
     <section class="automation-showcase fade-in-element" id="automations">
         <div class="container">
             <div class="section-header">
@@ -1243,7 +1273,9 @@
             <div class="automation-grid">
                 <!-- Automation 1: Content Strategist -->
                 <div class="automation-card">
-<img src="content-strategist.png" alt="AI Content Strategist" class="automation-image">
+                    <div class="automation-image-wrapper">
+                        <img src="content-strategist.png" alt="AI Content Strategist" class="automation-image">
+                    </div>
                     <h3 class="automation-title">AI Content Strategist</h3>
                     <p class="automation-description">Analyzes your past posts to generate content recommendations</p>
                     
@@ -1263,7 +1295,9 @@
                 
                 <!-- Automation 2: Multi-Platform Content -->
                 <div class="automation-card">
-<img src="team-workflow.png" alt="Team Content Workflow" class="automation-image">
+                    <div class="automation-image-wrapper">
+                        <img src="team-workflow.png" alt="Team Content Workflow" class="automation-image">
+                    </div>
                     <h3 class="automation-title">Team Content Workflow</h3>
                     <p class="automation-description">Multi-platform publishing with team approval workflows</p>
                     
@@ -1277,13 +1311,15 @@
                     <div class="automation-tags">
                         <span class="tag">n8n</span>
                         <span class="tag">Google Sheets</span>
-                        <span class="tag">Platform Specific API</span>
+                        <span class="tag">Platform APIs</span>
                     </div>
                 </div>
                 
                 <!-- Automation 3: Landing Page Analyzer -->
                 <div class="automation-card">
-<img src="landing-optimizer.png" alt="Landing Page Optimizer" class="automation-image">
+                    <div class="automation-image-wrapper">
+                        <img src="landing-optimizer.png" alt="Landing Page Optimizer" class="automation-image">
+                    </div>
                     <h3 class="automation-title">Landing Page Optimizer</h3>
                     <p class="automation-description">AI-powered landing page analysis with Gemini integration</p>
                     
@@ -1640,7 +1676,4 @@
         }
     </script>
 </body>
-
 </html>
-
-
