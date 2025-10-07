@@ -744,31 +744,82 @@
             margin-bottom: 1rem;
         }
         
-        .case-study-metrics {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            margin-bottom: 1rem;
-        }
-        
-        .metric {
-            text-align: center;
-        }
-        
-        /* Enhanced metric numbers with better contrast */
-        .metric-number {
+        /* Fix for Case Study Metrics - Add/Replace this in your CSS */
+.case-study-metrics {
+    display: grid; /* Change from flex to grid */
+    grid-template-columns: repeat(3, 1fr); /* Equal width columns */
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem 0;
+}
+
+.metric {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px; /* Ensures consistent height */
+}
+
+.metric-number {
     font-size: 2rem;
     font-weight: 800;
     color: var(--yellow);
     text-shadow: 0 0 30px rgba(255, 214, 121, 0.5);
     display: block;
     margin-bottom: 0.25rem;
+    line-height: 1.2; /* Consistent line height */
 }
-        
-        .metric-label {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-        }
+
+.metric-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-align: center;
+    line-height: 1.2;
+    min-height: 2em; /* Ensures labels don't cause shifting */
+}
+
+/* Optional: Add a subtle separator between metrics */
+.metric:not(:last-child) {
+    position: relative;
+}
+
+.metric:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 40px;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile responsiveness for metrics */
+@media (max-width: 768px) {
+    .case-study-metrics {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+        padding: 0.75rem 0;
+    }
+    
+    .metric {
+        min-height: 70px;
+    }
+    
+    .metric-number {
+        font-size: 1.5rem;
+    }
+    
+    .metric-label {
+        font-size: 0.65rem;
+    }
+    
+    .metric:not(:last-child)::after {
+        display: none; /* Hide separators on mobile */
+    }
+}
         
         .case-study-highlight {
     background: linear-gradient(135deg, rgba(255, 214, 121, 0.1) 0%, rgba(200, 116, 178, 0.1) 100%);
@@ -1649,5 +1700,6 @@
     </script>
 </body>
 </html>
+
 
 
