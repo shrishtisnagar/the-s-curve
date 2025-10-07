@@ -13,7 +13,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         /* Copy ALL base styles from main site */
@@ -167,7 +167,7 @@
         }
         
         .logo {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--text-primary);
@@ -240,14 +240,15 @@
             transform: translateY(-2px);
         }
         
-        /* ============= SIMPLIFIED PORTFOLIO HERO SECTION ============= */
+        /* ============= IMPROVED PORTFOLIO HERO SECTION ============= */
         .portfolio-hero {
-            min-height: 40vh;
+            min-height: 50vh;
             display: flex;
             align-items: center;
-            padding: 160px 0 40px;
+            padding: 180px 0 60px;
             position: relative;
             text-align: center;
+            isolation: isolate;
         }
         
         /* Dark overlay for better readability */
@@ -257,33 +258,134 @@
             inset: 0;
             background: radial-gradient(
                 ellipse at center,
-                rgba(33, 5, 53, 0.6) 0%,
-                rgba(33, 5, 53, 0.8) 100%
+                rgba(33, 5, 53, 0.7) 0%,
+                rgba(33, 5, 53, 0.85) 50%,
+                rgba(33, 5, 53, 0.95) 100%
             );
             z-index: -1;
         }
         
+        /* Accent glow behind text */
+        .portfolio-hero::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 60%;
+            background: radial-gradient(
+                ellipse at center,
+                rgba(200, 116, 178, 0.1) 0%,
+                transparent 70%
+            );
+            z-index: -1;
+            filter: blur(40px);
+        }
+        
+        /* Card background for text - BEST READABILITY */
+        .portfolio-hero .text-card {
+            background: linear-gradient(
+                135deg,
+                rgba(33, 5, 53, 0.8) 0%,
+                rgba(67, 13, 75, 0.6) 100%
+            );
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(200, 116, 178, 0.2);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .portfolio-hero .text-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(
+                circle at center,
+                rgba(200, 116, 178, 0.1) 0%,
+                transparent 70%
+            );
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
         .portfolio-hero h1 {
             font-family: 'Poppins', sans-serif;
-            font-size: clamp(1rem, 3vw, 2rem);
-            font-weight: 700;
-            line-height: 1.3;
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-weight: 800;
+            line-height: 1.2;
             margin-bottom: 0;
             opacity: 0;
             animation: fadeInUp 0.8s ease forwards;
             position: relative;
             z-index: 1;
-            max-width: 900px;
-            margin: 0 auto;
             
             /* Enhanced text styling for readability */
             color: var(--text-primary);
             text-shadow: 
-                0 0 40px rgba(200, 116, 178, 0.5),
-                0 4px 16px rgba(0, 0, 0, 0.8),
-                0 2px 4px rgba(0, 0, 0, 0.9);
+                0 2px 20px rgba(200, 116, 178, 0.5),
+                0 2px 4px rgba(0, 0, 0, 0.3);
             
+            /* Better spacing */
+            padding: 0;
             letter-spacing: -0.02em;
+        }
+        
+        /* Wave emoji animation */
+        .portfolio-hero .wave-emoji {
+            display: inline-block;
+            font-size: 1.2em;
+            animation: wave 0.6s ease-in-out 0.5s 2;
+            transform-origin: 70% 70%;
+        }
+        
+        @keyframes wave {
+            0% { transform: rotate(0deg); }
+            10% { transform: rotate(14deg); }
+            20% { transform: rotate(-8deg); }
+            30% { transform: rotate(14deg); }
+            40% { transform: rotate(-4deg); }
+            50% { transform: rotate(10deg); }
+            60% { transform: rotate(0deg); }
+            100% { transform: rotate(0deg); }
+        }
+        
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            animation: fadeInUp 1s ease 1s forwards;
+        }
+        
+        .scroll-indicator::after {
+            content: '↓';
+            display: block;
+            font-size: 1.5rem;
+            color: var(--accent-primary);
+            animation: bounce 2s infinite;
+            text-shadow: 0 0 10px rgba(200, 116, 178, 0.5);
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
         }
         
         @keyframes fadeInUp {
@@ -329,6 +431,18 @@
             border: 3px solid var(--accent-primary);
             position: relative;
             z-index: 2;
+        }
+        
+        .profile-ring {
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            border: 2px dashed var(--accent-light);
+            border-radius: 50%;
+            animation: rotate 20s linear infinite;
+            opacity: 0.5;
         }
         
         .about-me-text h2 {
@@ -423,29 +537,23 @@
             margin: 0 auto;
         }
         
-        /* Certifications - Split Table Design */
+        /* Certifications - Table Design */
         .certifications {
             background: rgba(20, 20, 40, 0.3);
-            padding: 60px 0;
-        }
-        
-        .cert-tables-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-top: 2rem;
         }
         
         .cert-table-wrapper {
+            overflow-x: auto;
+            margin-top: 2rem;
             background: rgba(20, 20, 40, 0.4);
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            overflow: hidden;
         }
         
         .cert-table {
             width: 100%;
             border-collapse: collapse;
+            min-width: 600px;
         }
         
         .cert-table thead {
@@ -454,12 +562,12 @@
         }
         
         .cert-table th {
-            padding: 1rem 0.75rem;
+            padding: 1.25rem 1rem;
             text-align: left;
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
             color: var(--accent-light);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -471,21 +579,41 @@
         
         .cert-table tbody tr:hover {
             background: rgba(200, 116, 178, 0.05);
+            transform: translateX(5px);
         }
         
         .cert-table td {
-            padding: 0.75rem;
+            padding: 1rem;
             color: var(--text-secondary);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
         }
         
         .cert-table td:first-child {
-            font-weight: 500;
+            font-weight: 600;
             color: var(--text-primary);
         }
         
-                
-        /* Automation Showcase - Simplified */
+        .cert-category {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            background: rgba(200, 116, 178, 0.2);
+            border: 1px solid var(--accent-primary);
+            border-radius: 12px;
+            font-size: 0.75rem;
+            color: var(--accent-light);
+        }
+        
+        /* Mobile scroll indicator */
+        .scroll-hint {
+            display: none;
+            text-align: center;
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            opacity: 0.7;
+        }
+        
+        /* Automation Showcase - Fixed image sizing */
         .automation-showcase {
             background: rgba(20, 20, 40, 0.3);
         }
@@ -574,7 +702,23 @@
             font-weight: bold;
         }
         
-        /* Case Studies - Simplified */
+        .automation-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        
+        .tag {
+            background: rgba(200, 116, 178, 0.2);
+            border: 1px solid var(--accent-primary);
+            padding: 0.2rem 0.5rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+        }
+        
+        /* Case Studies */
         .case-studies-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -582,7 +726,7 @@
         }
         
         .case-study-card {
-            background: rgba(20, 20, 40, 0.6);
+            background: rgba(20, 20, 40, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border-radius: 12px;
@@ -599,7 +743,7 @@
         
         .case-study-header {
             padding: 1.5rem;
-            background: linear-gradient(135deg, rgba(200, 116, 178, 0.15) 0%, rgba(200, 116, 178, 0.05) 100%);
+            background: rgba(200, 116, 178, 0.05);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         
@@ -618,7 +762,6 @@
             font-family: 'Poppins', sans-serif;
             font-size: 1.25rem;
             margin-bottom: 0.25rem;
-            color: var(--text-primary);
         }
         
         .case-study-subtitle {
@@ -633,17 +776,14 @@
         .case-study-description {
             font-size: 0.9rem;
             color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
+            margin-bottom: 1rem;
         }
         
         .case-study-metrics {
             display: flex;
-            gap: 1rem;
-            justify-content: space-around;
-            padding: 1rem;
-            background: rgba(200, 116, 178, 0.1);
-            border-radius: 8px;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 1rem;
         }
         
         .metric {
@@ -654,13 +794,21 @@
             font-size: 1.75rem;
             font-weight: 700;
             color: var(--accent-primary);
-            text-shadow: 0 2px 8px rgba(200, 116, 178, 0.4);
         }
         
         .metric-label {
             font-size: 0.75rem;
             color: var(--text-secondary);
-            margin-top: 0.25rem;
+        }
+        
+        .case-study-results {
+            background: rgba(200, 116, 178, 0.1);
+            padding: 0.75rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            text-align: center;
+            color: var(--accent-light);
         }
         
         /* Fixed Testimonials for Mobile */
@@ -860,6 +1008,19 @@
             transform: translateY(0);
         }
         
+        /* Responsive adjustments for automation images */
+        @media (min-width: 1920px) {
+            .automation-image-wrapper {
+                height: 200px;
+            }
+        }
+        
+        @media (max-width: 1200px) {
+            .automation-image-wrapper {
+                height: 160px;
+            }
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .container {
@@ -870,12 +1031,21 @@
                 padding: 1.5rem 0;
             }
             
+            /* MOBILE HERO ADJUSTMENTS */
             .portfolio-hero {
-                padding: 140px 0 40px;
+                min-height: 45vh;
+                padding: 150px 0 40px;
             }
             
             .portfolio-hero h1 {
-                font-size: clamp(1.5rem, 6vw, 2.5rem);
+                font-size: clamp(1.6rem, 7vw, 2.5rem);
+                font-weight: 700;
+            }
+            
+            .portfolio-hero .text-card {
+                margin: 0 15px;
+                padding: 2rem 1.5rem;
+                border-radius: 15px;
             }
             
             h2 {
@@ -890,14 +1060,6 @@
             .profile-img-container {
                 width: 200px;
                 height: 200px;
-            }
-            
-            .cert-tables-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .tools-grid {
-                grid-template-columns: 1fr;
             }
             
             .automation-grid {
@@ -935,6 +1097,21 @@
                 font-size: 0.9rem;
             }
             
+            /* Show scroll hint on mobile for table */
+            .scroll-hint {
+                display: block;
+            }
+            
+            .cert-table-wrapper {
+                border-radius: 8px;
+            }
+            
+            .cert-table th,
+            .cert-table td {
+                padding: 0.75rem 0.5rem;
+                font-size: 0.8rem;
+            }
+            
             .nav-links {
                 display: none;
             }
@@ -952,12 +1129,6 @@
         @media (min-width: 768px) {
             .nav-links {
                 display: flex;
-            }
-        }
-        
-        @media (min-width: 768px) and (max-width: 1024px) {
-            .tools-grid {
-                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
@@ -985,10 +1156,13 @@
         </nav>
     </header>
 
-    <!-- Simplified Portfolio Hero -->
+    <!-- IMPROVED Portfolio Hero with Card Background -->
     <section class="portfolio-hero">
         <div class="container">
-            <h1>Oh, so you're one of those people who actually check portfolios? Love that!</h1>
+            <div class="text-card">
+                <h1>Oh, so you're one of those people who actually check portfolios? Love that! <span class="wave-emoji">👋</span></h1>
+            </div>
+            <div class="scroll-indicator"></div>
         </div>
     </section>
 
@@ -998,6 +1172,7 @@
             <div class="about-me-content">
                 <div class="profile-area">
                     <div class="profile-img-container">
+                        <div class="profile-ring"></div>
                         <img src="founder.jpeg" alt="Shrishti S Nagar" class="profile-img">
                     </div>
                     <h3 style="font-family: 'Poppins', sans-serif; font-size: 1.5rem; margin-bottom: 0.5rem;">Shrishti S Nagar</h3>
@@ -1042,94 +1217,91 @@
         </div>
     </section>
 
-    <!-- Certifications Section - Split Tables -->
+    <!-- Certifications Section - Table Design -->
     <section class="certifications fade-in-element" id="certifications">
         <div class="container">
             <div class="section-header">
                 <h2>Certifications & Training</h2>
             </div>
             
-            <div class="cert-tables-container">
-                <!-- Table 1 -->
-                <div class="cert-table-wrapper">
-                    <table class="cert-table">
-                        <thead>
-                            <tr>
-                                <th>Certification</th>
-                                <th>Institution</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>LinkedIn Certified Marketing Insider</td>
-                                <td>LinkedIn Marketing Labs</td>
-                            </tr>
-                            <tr>
-                                <td>Growth Marketing Foundations</td>
-                                <td>LinkedIn</td>
-                            </tr>
-                            <tr>
-                                <td>The Fundamentals of Digital Marketing</td>
-                                <td>Google</td>
-                            </tr>
-                            <tr>
-                                <td>Digital Marketing Certified</td>
-                                <td>HubSpot</td>
-                            </tr>
-                            <tr>
-                                <td>Generative AI Mastermind</td>
-                                <td>Outskill</td>
-                            </tr>
-                            <tr>
-                                <td>The Strategy of Content Marketing</td>
-                                <td>UC Davis</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                
-                <!-- Table 2 -->
-                <div class="cert-table-wrapper">
-                    <table class="cert-table">
-                        <thead>
-                            <tr>
-                                <th>Certification</th>
-                                <th>Institution</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Introduction to Personal Branding</td>
-                                <td>University of Virginia</td>
-                            </tr>
-                            <tr>
-                                <td>Personality Types at Work</td>
-                                <td>University of Florida</td>
-                            </tr>
-                            <tr>
-                                <td>Advanced Social Media Strategy</td>
-                                <td>Crack Those Socials</td>
-                            </tr>
-                            <tr>
-                                <td>Introduction to Psychology</td>
-                                <td>Yale University</td>
-                            </tr>
-                            <tr>
-                                <td>Writers Training Program</td>
-                                <td>Pepper Content</td>
-                            </tr>
-                            <tr>
-                                <td>Life Coach Practitioner Diploma</td>
-                                <td>AMAP</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="cert-table-wrapper">
+                <table class="cert-table">
+                    <thead>
+                        <tr>
+                            <th>Certification</th>
+                            <th>Institution</th>
+                            <th>Category</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>LinkedIn Certified Marketing Insider</td>
+                            <td>LinkedIn Marketing Labs</td>
+                            <td><span class="cert-category">Marketing</span></td>
+                        </tr>
+                        <tr>
+                            <td>Growth Marketing Foundations</td>
+                            <td>LinkedIn</td>
+                            <td><span class="cert-category">Growth</span></td>
+                        </tr>
+                        <tr>
+                            <td>The Fundamentals of Digital Marketing</td>
+                            <td>Google</td>
+                            <td><span class="cert-category">Digital Marketing</span></td>
+                        </tr>
+                        <tr>
+                            <td>Digital Marketing Certified</td>
+                            <td>HubSpot</td>
+                            <td><span class="cert-category">Marketing</span></td>
+                        </tr>
+                        <tr>
+                            <td>Generative AI Mastermind</td>
+                            <td>Outskill</td>
+                            <td><span class="cert-category">AI/Tech</span></td>
+                        </tr>
+                        <tr>
+                            <td>The Strategy of Content Marketing</td>
+                            <td>University of California, Davis</td>
+                            <td><span class="cert-category">Content</span></td>
+                        </tr>
+                        <tr>
+                            <td>Introduction to Personal Branding</td>
+                            <td>University of Virginia</td>
+                            <td><span class="cert-category">Branding</span></td>
+                        </tr>
+                        <tr>
+                            <td>Personality Types at Work</td>
+                            <td>University of Florida</td>
+                            <td><span class="cert-category">Psychology</span></td>
+                        </tr>
+                        <tr>
+                            <td>Advanced Social Media Strategy</td>
+                            <td>Crack Those Socials</td>
+                            <td><span class="cert-category">Social Media</span></td>
+                        </tr>
+                        <tr>
+                            <td>Introduction to Psychology</td>
+                            <td>Yale University</td>
+                            <td><span class="cert-category">Psychology</span></td>
+                        </tr>
+                        <tr>
+                            <td>Writers Training Program</td>
+                            <td>Pepper Content</td>
+                            <td><span class="cert-category">Writing</span></td>
+                        </tr>
+                        <tr>
+                            <td>Life Coach Practitioner Diploma</td>
+                            <td>The Academy of Modern Applied Psychology</td>
+                            <td><span class="cert-category">Coaching</span></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+            <p class="scroll-hint">← Swipe to see more →</p>
         </div>
     </section>
 
-    <!-- n8n Automation Showcase - Without Tags -->
+    <!-- n8n Automation Showcase with Fixed Image Sizing -->
     <section class="automation-showcase fade-in-element" id="automations">
         <div class="container">
             <div class="section-header">
@@ -1151,6 +1323,12 @@
                         <div class="feature-item">Generates topic suggestions</div>
                         <div class="feature-item">Creates content calendar</div>
                     </div>
+                    
+                    <div class="automation-tags">
+                        <span class="tag">n8n</span>
+                        <span class="tag">Gemini</span>
+                        <span class="tag">Google Sheets</span>
+                    </div>
                 </div>
                 
                 <!-- Automation 2: Multi-Platform Content -->
@@ -1166,6 +1344,12 @@
                         <div class="feature-item">Human review checkpoints</div>
                         <div class="feature-item">Platform-specific optimization</div>
                         <div class="feature-item">Team collaboration features</div>
+                    </div>
+                    
+                    <div class="automation-tags">
+                        <span class="tag">n8n</span>
+                        <span class="tag">Google Sheets</span>
+                        <span class="tag">Platform APIs</span>
                     </div>
                 </div>
                 
@@ -1183,12 +1367,18 @@
                         <div class="feature-item">Conversion optimization tips</div>
                         <div class="feature-item">Competitor comparison</div>
                     </div>
+                    
+                    <div class="automation-tags">
+                        <span class="tag">n8n</span>
+                        <span class="tag">Gemini AI</span>
+                        <span class="tag">CRO</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Case Studies with Better Contrast -->
+    <!-- Case Studies with Real Data -->
     <section class="case-studies fade-in-element" id="case-studies">
         <div class="container">
             <div class="section-header">
@@ -1221,6 +1411,9 @@
                                 <div class="metric-label">Profile Views</div>
                             </div>
                         </div>
+                        <div class="case-study-results">
+                            💰 Result: $8,400 client after workshop
+                        </div>
                     </div>
                 </div>
                 
@@ -1248,6 +1441,9 @@
                                 <div class="metric-number">7+</div>
                                 <div class="metric-label">Qualified Leads</div>
                             </div>
+                        </div>
+                        <div class="case-study-results">
+                            📈 Long-term client with consistent ROI
                         </div>
                     </div>
                 </div>
@@ -1277,6 +1473,9 @@
                                 <div class="metric-label">Profile Views ↑</div>
                             </div>
                         </div>
+                        <div class="case-study-results">
+                            🎯 Achieved goals in just 2 months
+                        </div>
                     </div>
                 </div>
                 
@@ -1304,6 +1503,9 @@
                                 <div class="metric-number">164%</div>
                                 <div class="metric-label">Profile Views ↑</div>
                             </div>
+                        </div>
+                        <div class="case-study-results">
+                            🔄 Sustainable, low-maintenance system
                         </div>
                     </div>
                 </div>
@@ -1513,5 +1715,3 @@
     </script>
 </body>
 </html>
-
-
