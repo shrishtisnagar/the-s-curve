@@ -240,24 +240,152 @@
             transform: translateY(-2px);
         }
         
-        /* Portfolio Hero - Shorter */
+        /* ============= IMPROVED PORTFOLIO HERO SECTION ============= */
         .portfolio-hero {
-            min-height: 35vh;
+            min-height: 50vh;
             display: flex;
             align-items: center;
-            padding: 160px 0 40px;
+            padding: 180px 0 60px;
             position: relative;
             text-align: center;
+            isolation: isolate;
+        }
+        
+        /* Dark overlay for better readability */
+        .portfolio-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(
+                ellipse at center,
+                rgba(33, 5, 53, 0.7) 0%,
+                rgba(33, 5, 53, 0.85) 50%,
+                rgba(33, 5, 53, 0.95) 100%
+            );
+            z-index: -1;
+        }
+        
+        /* Accent glow behind text */
+        .portfolio-hero::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 60%;
+            background: radial-gradient(
+                ellipse at center,
+                rgba(200, 116, 178, 0.1) 0%,
+                transparent 70%
+            );
+            z-index: -1;
+            filter: blur(40px);
+        }
+        
+        /* Card background for text - BEST READABILITY */
+        .portfolio-hero .text-card {
+            background: linear-gradient(
+                135deg,
+                rgba(33, 5, 53, 0.8) 0%,
+                rgba(67, 13, 75, 0.6) 100%
+            );
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(200, 116, 178, 0.2);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .portfolio-hero .text-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(
+                circle at center,
+                rgba(200, 116, 178, 0.1) 0%,
+                transparent 70%
+            );
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
         
         .portfolio-hero h1 {
             font-family: 'Poppins', sans-serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 1rem;
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 0;
             opacity: 0;
             animation: fadeInUp 0.8s ease forwards;
+            position: relative;
+            z-index: 1;
+            
+            /* Enhanced text styling for readability */
+            color: var(--text-primary);
+            text-shadow: 
+                0 2px 20px rgba(200, 116, 178, 0.5),
+                0 2px 4px rgba(0, 0, 0, 0.3);
+            
+            /* Better spacing */
+            padding: 0;
+            letter-spacing: -0.02em;
+        }
+        
+        /* Wave emoji animation */
+        .portfolio-hero .wave-emoji {
+            display: inline-block;
+            font-size: 1.2em;
+            animation: wave 0.6s ease-in-out 0.5s 2;
+            transform-origin: 70% 70%;
+        }
+        
+        @keyframes wave {
+            0% { transform: rotate(0deg); }
+            10% { transform: rotate(14deg); }
+            20% { transform: rotate(-8deg); }
+            30% { transform: rotate(14deg); }
+            40% { transform: rotate(-4deg); }
+            50% { transform: rotate(10deg); }
+            60% { transform: rotate(0deg); }
+            100% { transform: rotate(0deg); }
+        }
+        
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            animation: fadeInUp 1s ease 1s forwards;
+        }
+        
+        .scroll-indicator::after {
+            content: '↓';
+            display: block;
+            font-size: 1.5rem;
+            color: var(--accent-primary);
+            animation: bounce 2s infinite;
+            text-shadow: 0 0 10px rgba(200, 116, 178, 0.5);
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
         }
         
         @keyframes fadeInUp {
@@ -315,11 +443,6 @@
             border-radius: 50%;
             animation: rotate 20s linear infinite;
             opacity: 0.5;
-        }
-        
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
         }
         
         .about-me-text h2 {
@@ -690,22 +813,21 @@
         
         /* Fixed Testimonials for Mobile */
         .testimonials-container {
-    position: relative;
-    height: 320px;  /* Fixed height instead of auto */
-    overflow: hidden;
-    background: rgba(20, 20, 40, 0.3);
-    border-radius: 12px;
-    padding: 2rem;
-}
+            position: relative;
+            height: 320px;
+            overflow: hidden;
+            background: rgba(20, 20, 40, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+        }
         
         .testimonials-track {
-    display: flex;
-    animation: scroll 30s linear infinite;
-    position: absolute;  /* Added this */
-    left: 0;            /* Added this */
-    top: 2rem;          /* Added this */
-    /* Removed the gap property */
-}
+            display: flex;
+            animation: scroll 30s linear infinite;
+            position: absolute;
+            left: 0;
+            top: 2rem;
+        }
         
         @keyframes scroll {
             0% { transform: translateX(0); }
@@ -716,42 +838,17 @@
             animation-play-state: paused;
         }
         
-       .testimonial-card {
-    min-width: 400px;
-    background: rgba(20, 20, 40, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 2rem;
-    margin-right: 2rem;  /* Added margin instead of gap */
-    border-radius: 8px;
-    position: relative;
-    height: fit-content;  /* Added this */
-}
-        /* NEW Mobile-specific adjustments */
-@media (max-width: 768px) {
-    /* Mobile testimonials adjustments */
-    .testimonials-container {
-        height: 280px;  /* Smaller height for mobile */
-        padding: 1rem;  /* Less padding */
-    }
-    
-    .testimonials-track {
-        top: 1rem;  /* Adjusted top position */
-    }
-    
-    .testimonial-card {
-        min-width: 280px;  /* Smaller width for mobile */
-        padding: 1.5rem;   /* Less padding */
-    }
-    
-    .testimonial-card::before {
-        font-size: 3rem;  /* Smaller quote mark */
-    }
-    
-    .testimonial-text {
-        font-size: 0.9rem;  /* Smaller text */
-    }
-}
+        .testimonial-card {
+            min-width: 400px;
+            background: rgba(20, 20, 40, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            margin-right: 2rem;
+            border-radius: 8px;
+            position: relative;
+            height: fit-content;
+        }
         
         .testimonial-card::before {
             content: '"';
@@ -934,12 +1031,21 @@
                 padding: 1.5rem 0;
             }
             
+            /* MOBILE HERO ADJUSTMENTS */
             .portfolio-hero {
-                padding: 140px 0 40px;
+                min-height: 45vh;
+                padding: 150px 0 40px;
             }
             
             .portfolio-hero h1 {
-                font-size: clamp(1.8rem, 7vw, 3rem);
+                font-size: clamp(1.6rem, 7vw, 2.5rem);
+                font-weight: 700;
+            }
+            
+            .portfolio-hero .text-card {
+                margin: 0 15px;
+                padding: 2rem 1.5rem;
+                border-radius: 15px;
             }
             
             h2 {
@@ -970,8 +1076,12 @@
             
             /* Fixed mobile testimonials */
             .testimonials-container {
+                height: 280px;
                 padding: 1rem;
-                min-height: 250px;
+            }
+            
+            .testimonials-track {
+                top: 1rem;
             }
             
             .testimonial-card {
@@ -1046,10 +1156,13 @@
         </nav>
     </header>
 
-    <!-- Shorter Portfolio Hero -->
+    <!-- IMPROVED Portfolio Hero with Card Background -->
     <section class="portfolio-hero">
         <div class="container">
-            <h1>Oh, so you’re one of those people who actually check portfolios? Love that!</h1>
+            <div class="text-card">
+                <h1>Oh, so you're one of those people who actually check portfolios? Love that! <span class="wave-emoji">👋</span></h1>
+            </div>
+            <div class="scroll-indicator"></div>
         </div>
     </section>
 
@@ -1059,6 +1172,7 @@
             <div class="about-me-content">
                 <div class="profile-area">
                     <div class="profile-img-container">
+                        <div class="profile-ring"></div>
                         <img src="founder.jpeg" alt="Shrishti S Nagar" class="profile-img">
                     </div>
                     <h3 style="font-family: 'Poppins', sans-serif; font-size: 1.5rem; margin-bottom: 0.5rem;">Shrishti S Nagar</h3>
@@ -1601,7 +1715,3 @@
     </script>
 </body>
 </html>
-
-
-
-
