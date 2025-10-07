@@ -690,20 +690,22 @@
         
         /* Fixed Testimonials for Mobile */
         .testimonials-container {
-            position: relative;
-            overflow: hidden;
-            background: rgba(20, 20, 40, 0.3);
-            border-radius: 12px;
-            padding: 2rem;
-            height: auto;
-            min-height: 300px;
-        }
+    position: relative;
+    height: 320px;  /* Fixed height instead of auto */
+    overflow: hidden;
+    background: rgba(20, 20, 40, 0.3);
+    border-radius: 12px;
+    padding: 2rem;
+}
         
         .testimonials-track {
-            display: flex;
-            animation: scroll 30s linear infinite;
-            gap: 2rem;
-        }
+    display: flex;
+    animation: scroll 30s linear infinite;
+    position: absolute;  /* Added this */
+    left: 0;            /* Added this */
+    top: 2rem;          /* Added this */
+    /* Removed the gap property */
+}
         
         @keyframes scroll {
             0% { transform: translateX(0); }
@@ -714,16 +716,42 @@
             animation-play-state: paused;
         }
         
-        .testimonial-card {
-            min-width: 400px;
-            background: rgba(20, 20, 40, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 8px;
-            position: relative;
-            flex-shrink: 0;
-        }
+       .testimonial-card {
+    min-width: 400px;
+    background: rgba(20, 20, 40, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    margin-right: 2rem;  /* Added margin instead of gap */
+    border-radius: 8px;
+    position: relative;
+    height: fit-content;  /* Added this */
+}
+        /* NEW Mobile-specific adjustments */
+@media (max-width: 768px) {
+    /* Mobile testimonials adjustments */
+    .testimonials-container {
+        height: 280px;  /* Smaller height for mobile */
+        padding: 1rem;  /* Less padding */
+    }
+    
+    .testimonials-track {
+        top: 1rem;  /* Adjusted top position */
+    }
+    
+    .testimonial-card {
+        min-width: 280px;  /* Smaller width for mobile */
+        padding: 1.5rem;   /* Less padding */
+    }
+    
+    .testimonial-card::before {
+        font-size: 3rem;  /* Smaller quote mark */
+    }
+    
+    .testimonial-text {
+        font-size: 0.9rem;  /* Smaller text */
+    }
+}
         
         .testimonial-card::before {
             content: '"';
@@ -1573,4 +1601,5 @@
     </script>
 </body>
 </html>
+
 
