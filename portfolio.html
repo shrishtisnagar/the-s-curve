@@ -38,9 +38,7 @@
             --cosmic-gradient: linear-gradient(135deg, #c874b2 0%, #f5d5e0 100%);
             --subtle-glow: rgba(200, 116, 178, 0.5);
             --success-green: #4CAF50;
-            --highlight-green: #00FF88;
-            --highlight-blue: #00D4FF;
-        }
+                    }
         
         body {
             font-family: 'Inter', -apple-system, sans-serif;
@@ -759,16 +757,13 @@
         
         /* Enhanced metric numbers with better contrast */
         .metric-number {
-            font-size: 2rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--highlight-green) 0%, var(--highlight-blue) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
-            display: block;
-            margin-bottom: 0.25rem;
-        }
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--yellow);
+    text-shadow: 0 0 30px rgba(255, 214, 121, 0.5);
+    display: block;
+    margin-bottom: 0.25rem;
+}
         
         .metric-label {
             font-size: 0.75rem;
@@ -776,20 +771,20 @@
         }
         
         .case-study-highlight {
-            background: linear-gradient(135deg, rgba(0, 255, 136, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%);
-            border: 1px solid rgba(0, 255, 136, 0.3);
-            padding: 1rem;
-            border-radius: 8px;
-            margin-top: 1rem;
-            text-align: center;
-        }
+    background: linear-gradient(135deg, rgba(255, 214, 121, 0.1) 0%, rgba(200, 116, 178, 0.1) 100%);
+    border: 1px solid var(--yellow);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    text-align: center;
+}
         
         .highlight-amount {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--highlight-green);
-            text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
-        }
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--yellow);
+    text-shadow: 0 0 20px rgba(255, 214, 121, 0.5);
+}
         
         /* Fixed Testimonials for Mobile */
         .testimonials-container {
@@ -1663,3 +1658,4 @@
     </script>
 </body>
 </html>
+
