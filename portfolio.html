@@ -551,11 +551,24 @@
         
         .automation-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
             margin-top: 3rem;
         }
-        
+
+
+        /* Add responsive adjustments */
+@media (max-width: 1200px) {
+    .automation-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .automation-grid {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+    }
+}
         .automation-card {
             background: rgba(20, 20, 40, 0.6);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1194,64 +1207,81 @@
 
    
     <!-- n8n Automation Showcase without tags -->
-    <section class="automation-showcase fade-in-element" id="automations">
-        <div class="container">
-            <div class="section-header">
-                <h2>AI-powered workflows</h2>
+<section class="automation-showcase fade-in-element" id="automations">
+    <div class="container">
+        <div class="section-header">
+            <h2>AI-powered workflows</h2>
+        </div>
+        
+        <div class="automation-grid">
+            <!-- Automation 1: Content Strategist -->
+            <div class="automation-card">
+                <div class="automation-image-wrapper">
+                    <img src="content-strategist.png" alt="AI Content Strategist" class="automation-image">
+                </div>
+                <h3 class="automation-title">AI Content Strategist</h3>
+                <p class="automation-description">Analyzes your past posts to generate content recommendations</p>
+                
+                <div class="automation-features">
+                    <div class="feature-item">Analyzes post performance metrics</div>
+                    <div class="feature-item">Identifies content patterns</div>
+                    <div class="feature-item">Generates topic suggestions</div>
+                    <div class="feature-item">Creates content calendar</div>
+                </div>
             </div>
             
-            <div class="automation-grid">
-                <!-- Automation 1: Content Strategist -->
-                <div class="automation-card">
-                    <div class="automation-image-wrapper">
-                        <img src="content-strategist.png" alt="AI Content Strategist" class="automation-image">
-                    </div>
-                    <h3 class="automation-title">AI Content Strategist</h3>
-                    <p class="automation-description">Analyzes your past posts to generate content recommendations</p>
-                    
-                    <div class="automation-features">
-                        <div class="feature-item">Analyzes post performance metrics</div>
-                        <div class="feature-item">Identifies content patterns</div>
-                        <div class="feature-item">Generates topic suggestions</div>
-                        <div class="feature-item">Creates content calendar</div>
-                    </div>
+            <!-- Automation 2: Multi-Platform Content -->
+            <div class="automation-card">
+                <div class="automation-image-wrapper">
+                    <img src="team-workflow.png" alt="Team Content Workflow" class="automation-image">
                 </div>
+                <h3 class="automation-title">Team Content Workflow</h3>
+                <p class="automation-description">Multi-platform publishing with team approval workflows</p>
                 
-                <!-- Automation 2: Multi-Platform Content -->
-                <div class="automation-card">
-                    <div class="automation-image-wrapper">
-                        <img src="team-workflow.png" alt="Team Content Workflow" class="automation-image">
-                    </div>
-                    <h3 class="automation-title">Team Content Workflow</h3>
-                    <p class="automation-description">Multi-platform publishing with team approval workflows</p>
-                    
-                    <div class="automation-features">
-                        <div class="feature-item">One-click to 5+ platforms</div>
-                        <div class="feature-item">Human review checkpoints</div>
-                        <div class="feature-item">Platform-specific optimization</div>
-                        <div class="feature-item">Team collaboration features</div>
-                    </div>
+                <div class="automation-features">
+                    <div class="feature-item">One-click to 5+ platforms</div>
+                    <div class="feature-item">Human review checkpoints</div>
+                    <div class="feature-item">Platform-specific optimization</div>
+                    <div class="feature-item">Team collaboration features</div>
                 </div>
+            </div>
+            
+            <!-- Automation 3: Landing Page Analyzer -->
+            <div class="automation-card">
+                <div class="automation-image-wrapper">
+                    <img src="landing-optimizer.png" alt="Landing Page Optimizer" class="automation-image">
+                </div>
+                <h3 class="automation-title">Landing Page Optimizer</h3>
+                <p class="automation-description">AI-powered landing page analysis with Gemini integration</p>
                 
-                <!-- Automation 3: Landing Page Analyzer -->
-                <div class="automation-card">
-                    <div class="automation-image-wrapper">
-                        <img src="landing-optimizer.png" alt="Landing Page Optimizer" class="automation-image">
-                    </div>
-                    <h3 class="automation-title">Landing Page Optimizer</h3>
-                    <p class="automation-description">AI-powered landing page analysis with Gemini integration</p>
-                    
-                    <div class="automation-features">
-                        <div class="feature-item">Real-time page analysis</div>
-                        <div class="feature-item">SEO recommendations</div>
-                        <div class="feature-item">Conversion optimization tips</div>
-                        <div class="feature-item">Competitor comparison</div>
-                    </div>
+                <div class="automation-features">
+                    <div class="feature-item">Real-time page analysis</div>
+                    <div class="feature-item">SEO recommendations</div>
+                    <div class="feature-item">Conversion optimization tips</div>
+                    <div class="feature-item">Competitor comparison</div>
+                </div>
+            </div>
+            
+            <!-- NEW Automation 4: LinkedIn Auto-Curator -->
+            <div class="automation-card">
+                <div class="automation-image-wrapper">
+                    <img src="linkedin-curator.png" alt="LinkedIn Auto-Curator" class="automation-image">
+                </div>
+                <h3 class="automation-title">LinkedIn Auto-Curator</h3>
+                <p class="automation-description">RSS + Gemini AI + Templated.io for automated company posts</p>
+                
+                <div class="automation-features">
+                    <div class="feature-item">Auto-curates from RSS feeds</div>
+                    <div class="feature-item">AI-powered content creation</div>
+                    <div class="feature-item">Visual design with Templated.io</div>
+                    <div class="feature-item">Scheduled LinkedIn posting</div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
+    
     <!-- Case Studies with Enhanced Numbers -->
     <section class="case-studies fade-in-element" id="case-studies">
         <div class="container">
@@ -1580,6 +1610,7 @@
     </script>
 </body>
 </html>
+
 
 
 
