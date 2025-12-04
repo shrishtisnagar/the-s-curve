@@ -2,26 +2,60 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9WWEJNT68S"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-9WWEJNT68S');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9WWEJNT68S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9WWEJNT68S');
+    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The S Curve - Human first AI marketing solutions for B2B businesses, because why compromise when you can have both? Book a call today.">
-    <meta name="keywords" content="marketing automation, B2B marketing, no-code automation, growth marketing, LinkedIn marketing, Shrishti S Nagar">
+    
+    <!-- SEO METADATA -->
+    <meta name="description" content="The S Curve - Human first AI marketing solutions for B2B businesses. Automated growth systems that save time without losing authenticity.">
     <meta name="author" content="Shrishti S Nagar">
+    <link rel="canonical" href="https://thescurve.in/" />
     <title>The S Curve - Human first AI Marketing & B2B Growth | Shrishti S Nagar</title>
+    
+    <!-- OPEN GRAPH / SOCIAL SHARE TAGS -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thescurve.in/">
+    <meta property="og:title" content="The S Curve | AI Marketing Automation for B2B">
+    <meta property="og:description" content="Save 20+ hours monthly with human-first AI marketing systems. Book a consultation with Shrishti S Nagar.">
+    <meta property="og:image" content="https://thescurve.in/logo.png">
+
+    <!-- JSON-LD SCHEMA (Tells Google you are a Service Business) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "The S Curve",
+      "image": "https://thescurve.in/logo.png",
+      "@id": "https://thescurve.in",
+      "url": "https://thescurve.in",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Shrishti S Nagar"
+      },
+      "description": "Human-first AI marketing solutions and automation for B2B businesses.",
+      "sameAs": [
+        "https://www.linkedin.com/in/shrishtisnagar",
+        "https://topmate.io/shrishtisnagar/1742503"
+      ]
+    }
+    </script>
     
     <!-- FAVICON -->
     <link rel="icon" type="image/png" href="logo.png">
     
- <base target="_blank">
-    
+    <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet"> 
@@ -55,34 +89,31 @@
             color: var(--text-primary);
             overflow-x: hidden;
             position: relative;
-            /* Added to ensure body takes full width on mobile */
             width: 100%;
             min-width: 320px;
         }
         
-        /* Universe Background - FIXED FOR MOBILE */
+        /* Universe Background */
         .universe-bg {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw; /* Use viewport width */
-            height: 100vh; /* Use viewport height */
+            width: 100vw;
+            height: 100vh;
             z-index: -2;
             background: radial-gradient(ellipse at center, var(--cosmos-medium) 0%, var(--cosmos-dark) 100%);
-            /* Ensure it covers entire viewport */
             min-width: 100%;
             min-height: 100%;
         }
         
-        /* Stars - moved after nebula to ensure visibility */
+        /* Stars */
         .stars {
             position: fixed;
-            width: 100vw; /* Use viewport width */
-            height: 100vh; /* Use viewport height */
+            width: 100vw;
+            height: 100vh;
             top: 0;
             left: 0;
             z-index: -1;
-            /* Ensure it covers entire viewport */
             min-width: 100%;
             min-height: 100%;
         }
@@ -105,13 +136,12 @@
         /* Nebula clouds */
         .nebula {
             position: fixed;
-            width: 100vw; /* Use viewport width */
-            height: 100vh; /* Use viewport height */
+            width: 100vw;
+            height: 100vh;
             top: 0;
             left: 0;
             opacity: 0.15;
             z-index: -3;
-            /* Ensure it covers entire viewport */
             min-width: 100%;
             min-height: 100%;
         }
@@ -154,7 +184,6 @@
             padding: 0 20px;
             position: relative;
             z-index: 1;
-            /* Ensure container doesn't exceed viewport */
             width: 100%;
             box-sizing: border-box;
         }
@@ -168,7 +197,6 @@
             backdrop-filter: blur(20px);
             z-index: 1000;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            /* Ensure header doesn't cause horizontal scroll */
             left: 0;
             box-sizing: border-box;
         }
@@ -179,7 +207,6 @@
             align-items: center;
             padding: 2.5rem 0;
             min-height: 100px;
-            /* Ensure nav doesn't cause overflow */
             width: 100%;
             box-sizing: border-box;
         }
@@ -241,7 +268,6 @@
             overflow: hidden;
             transition: all 0.3s;
             border-radius: 4px;
-            /* Prevent button from being too wide on mobile */
             white-space: nowrap;
             text-overflow: ellipsis;
             max-width: 180px;
@@ -320,7 +346,6 @@
             margin: 2rem 0 3rem;
             opacity: 0;
             animation: fadeInUp 0.8s ease 0.4s forwards;
-            /* Allow stats to wrap on small screens */
             flex-wrap: wrap;
         }
         
@@ -328,7 +353,6 @@
             border-left: 2px solid var(--accent-primary);
             padding-left: 1rem;
             position: relative;
-            /* Ensure stat doesn't get too wide */
             min-width: 120px;
         }
         
@@ -350,7 +374,6 @@
             margin-bottom: 1rem;
             opacity: 0;
             animation: fadeInUp 0.8s ease 0.6s forwards;
-            /* Allow buttons to stack on small screens */
             flex-wrap: wrap;
         }
         
@@ -364,7 +387,6 @@
             position: relative;
             overflow: hidden;
             border-radius: 4px;
-            /* Prevent text overflow */
             white-space: nowrap;
         }
         
@@ -384,7 +406,6 @@
             font-weight: 600;
             transition: all 0.3s;
             border-radius: 4px;
-            /* Prevent text overflow */
             white-space: nowrap;
         }
         
@@ -408,7 +429,6 @@
             opacity: 0;
             animation: fadeInUp 0.8s ease 0.8s forwards;
             border-radius: 20px;
-            /* Prevent badge from being too wide */
             white-space: nowrap;
         }
         
@@ -490,7 +510,6 @@
             padding: 80px 0;
             position: relative;
             background: rgba(10, 10, 31, 0.3);
-            /* Ensure sections don't cause horizontal overflow */
             width: 100%;
             box-sizing: border-box;
         }
@@ -544,29 +563,28 @@
         
         .about-content {
             display: grid;
-            grid-template-columns: 360px 1fr; /* Fixed left | Flexible right */
+            grid-template-columns: 360px 1fr; 
             gap: 4rem;
             align-items: start;
         }
 
         .about-text {
-            font-size: 1.125rem; /* Slightly larger: 18px */
-            line-height: 1.7; /* Slightly tighter for better density */
+            font-size: 1.125rem; 
+            line-height: 1.7; 
             color: var(--text-primary);
-            padding-right: 2rem; /* Breathe space from right edge */
+            padding-right: 2rem; 
         }
 
-        /* Optional: Add vertical alignment polish */
         @media (min-width: 769px) {
             .about-text {
-                padding-top: 1.5rem; /* Visually align top of text with top of card content */
+                padding-top: 1.5rem; 
             }
         }
 
         .founder-card {
             width: 100%;
             max-width: 360px;
-            margin: 0; /* Remove auto margin that was pushing it right */
+            margin: 0; 
             align-self: start;
             background: rgba(20, 20, 40, 0.6);
             border: 1px solid var(--accent-primary);
@@ -583,7 +601,6 @@
             box-shadow: 0 0 30px var(--subtle-glow);
         }
 
-        /* ✅ Updated Founder Image Style */
         .founder-img {
             width: 150px;
             height: 150px;
@@ -817,7 +834,6 @@
             padding: 80px 0;
             position: relative;
             overflow: hidden;
-            /* Ensure cta section doesn't cause overflow */
             width: 100%;
             box-sizing: border-box;
         }
@@ -860,7 +876,6 @@
             font-weight: 700;
             border-radius: 20px;
             border: 2px solid var(--accent-light);
-            /* Prevent urgency text from being too wide */
             white-space: nowrap;
         }
         
@@ -870,7 +885,6 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding: 3rem 0;
             text-align: center;
-            /* Ensure footer doesn't cause overflow */
             width: 100%;
             box-sizing: border-box;
         }
@@ -904,9 +918,8 @@
             box-shadow: 0 10px 25px var(--subtle-glow);
         }
         
-        /* Mobile Responsive - ENHANCED */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            /* Fix container padding for smaller screens */
             .container {
                 padding: 0 15px;
                 max-width: 100%;
@@ -914,7 +927,6 @@
             
             nav {
                 padding: 1.5rem 0;
-                /* Ensure nav items don't overflow */
                 flex-wrap: wrap;
                 gap: 1rem;
             }
@@ -939,7 +951,6 @@
                 display: none;
             }
             
-            /* Adjust hero content for mobile */
             .hero-content h1 {
                 font-size: clamp(2.5rem, 8vw, 3.5rem);
                 line-height: 1.2;
@@ -949,7 +960,6 @@
                 font-size: 1.1rem;
             }
             
-            /* Make stats responsive */
             .hero-stats {
                 gap: 1.5rem;
                 justify-content: center;
@@ -965,7 +975,6 @@
                 margin-top: 1rem;
             }
             
-            /* Stack CTA buttons vertically */
             .cta-group {
                 flex-direction: column;
                 align-items: stretch;
@@ -976,7 +985,6 @@
                 text-align: center;
             }
             
-            /* Adjust about section */
             .about-content {
                 gap: 2rem;
             }
@@ -985,23 +993,19 @@
                 max-width: 100%;
             }
             
-            /* Make portfolio cards full width */
             .portfolio-card, .service-card, .testimonial-card {
                 width: 100%;
             }
             
-            /* Adjust section headers */
             h2 {
                 font-size: 2.25rem;
                 padding: 0 10px;
             }
             
-            /* Adjust footer */
             footer {
                 padding: 2rem 0;
             }
             
-            /* Make logo responsive */
             .logo {
                 font-size: 1.25rem;
             }
@@ -1010,7 +1014,6 @@
                 height: 30px;
             }
             
-            /* Adjust badge and urgency text */
             .badge, .urgency {
                 font-size: 0.8rem;
                 padding: 0.4rem 0.8rem;
@@ -1023,7 +1026,6 @@
             }
         }
         
-        /* Extra small devices */
         @media (max-width: 480px) {
             .container {
                 padding: 0 10px;
@@ -1065,7 +1067,6 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <!-- ✅ LOGO + TEXT TOGETHER -->
             <a href="#" class="logo">
                 <img src="logo.png" alt="The S Curve Logo">
                 The S Curve
@@ -1076,7 +1077,7 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#testimonials">Results</a></li>
             </ul>
-            <a href="https://topmate.io/shrishtisnagar/1742503" class="header-cta">Book 1:1 Call</a>
+            <a href="https://topmate.io/shrishtisnagar/1742503" class="header-cta" target="_blank">Book 1:1 Call</a>
         </nav>
     </header>
 
@@ -1104,8 +1105,8 @@
                     </div>
                     
                     <div class="cta-group">
-                        <a href="https://topmate.io/shrishtisnagar/1742503" class="btn-primary">Book 1:1 Consultation →</a>
-                        <a href="https://calendly.com/shrishtisnagar/1-1-clarity-call-with-shrishti" class="btn-secondary">Get custom automation</a>
+                        <a href="https://topmate.io/shrishtisnagar/1742503" class="btn-primary" target="_blank">Book 1:1 Consultation →</a>
+                        <a href="https://calendly.com/shrishtisnagar/1-1-clarity-call-with-shrishti" class="btn-secondary" target="_blank">Get custom automation</a>
                     </div>
                     
                     <div class="badge">🚀 Last 5 slots this month</div>
@@ -1139,11 +1140,10 @@
             
             <div class="about-content">
     <div class="founder-card">
-        <!-- ✅ REAL FOUNDER IMAGE -->
         <img src="founder.jpeg" alt="Shrishti S Nagar" class="founder-img">
         <h3>Shrishti S Nagar</h3>
         <p>Marketing Strategist</p>
-        <a href="https://linkedin.com/in/shrishtisnagar" class="btn-primary" style="width: 100%;">
+        <a href="https://linkedin.com/in/shrishtisnagar" class="btn-primary" style="width: 100%;" target="_blank">
             Let's connect on LinkedIn →
         </a>
     </div>
@@ -1212,7 +1212,7 @@
                         <li>7 days extended chat support</li>
                         <li>Recording & action plan</li>
                     </ul>
-                    <a href="https://topmate.io/shrishtisnagar/1742503" class="btn-primary" style="width: 100%;">Book 1:1 Consultation</a>
+                    <a href="https://topmate.io/shrishtisnagar/1742503" class="btn-primary" style="width: 100%;" target="_blank">Book 1:1 Consultation</a>
                 </div>
                 
                 <div class="service-card">
@@ -1226,7 +1226,7 @@
                         <li>Training & documentation</li>
                         <li>1 month extended support</li>
                     </ul>
-                    <a href="https://calendly.com/shrishtisnagar/1-1-clarity-call-with-shrishti" class="btn-primary" style="width: 100%;">Get Custom Automation</a>
+                    <a href="https://calendly.com/shrishtisnagar/1-1-clarity-call-with-shrishti" class="btn-primary" style="width: 100%;" target="_blank">Get Custom Automation</a>
                 </div>
             </div>
         </div>
@@ -1275,8 +1275,8 @@
         <div class="container">
             <h2>Ready to Automate Your Marketing?</h2>
             <div class="cta-group" style="justify-content: center;">
-                <a href="https://topmate.io/shrishtisnagar/1742503" class="btn-primary">Book 1:1 Consultation</a>
-                <a href="https://calendly.com/shrishtisnagar/1-1-clarity-call-with-shrishti" class="btn-secondary">Get Custom Automation</a>
+                <a href="https://topmate.io/shrishtisnagar/1742503" class="btn-primary" target="_blank">Book 1:1 Consultation</a>
+                <a href="https://calendly.com/shrishtisnagar/1-1-clarity-call-with-shrishti" class="btn-secondary" target="_blank">Get Custom Automation</a>
             </div>
             <div class="urgency">⚡ Last few slots till we are fully booked for the year</div>
         </div>
@@ -1285,7 +1285,6 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <!-- ✅ FOOTER LOGO + TEXT -->
             <div class="logo" style="justify-content: center; font-size: 2rem; margin-bottom: 1rem;">
                 <img src="logo.png" alt="The S Curve Logo" style="height: 40px; margin-right: 10px;">
                 The S Curve
@@ -1316,7 +1315,6 @@
             star.style.animationDelay = Math.random() * 3 + 's';
             star.style.animationDuration = (Math.random() * 3 + 2) + 's';
             
-            // Variable star sizes
             const size = Math.random() * 2 + 0.5;
             star.style.width = size + 'px';
             star.style.height = size + 'px';
@@ -1365,7 +1363,3 @@
     </script>
 </body>
 </html>
-
-
-
-
