@@ -2,23 +2,63 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9WWEJNT68S"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-9WWEJNT68S');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9WWEJNT68S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9WWEJNT68S');
+    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio - Shrishti S Nagar | Marketing Strategist & Automation Expert. View case studies and client results.">
-    <title>Portfolio - The S Curve | Shrishti S Nagar</title>
+    
+    <!-- SEO METADATA -->
+    <meta name="description" content="See the results: $50K+ revenue generated and 20+ hours saved monthly. Case studies for B2B Marketing Automation & AI Strategy by Shrishti S Nagar.">
+    <meta name="author" content="Shrishti S Nagar">
+    <link rel="canonical" href="https://thescurve.in/portfolio.html" />
+    <title>Portfolio & Case Studies - The S Curve | Shrishti S Nagar</title>
+    
+    <!-- OPEN GRAPH / SOCIAL SHARE TAGS -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thescurve.in/portfolio.html">
+    <meta property="og:title" content="Client Results & Case Studies | The S Curve">
+    <meta property="og:description" content="See how we generated $50K+ revenue and saved 20+ hours monthly for B2B clients using AI Marketing Automation.">
+    <meta property="og:image" content="https://thescurve.in/logo.png">
+
+    <!-- JSON-LD SCHEMA (Tells Google this is your Portfolio) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "The S Curve Portfolio",
+      "url": "https://thescurve.in/portfolio.html",
+      "description": "Case studies and results for B2B Marketing Automation services.",
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "LinkedIn Event Strategy ($8.4K Result)"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "B2B Lead Generation Automation"
+          }
+        ]
+      },
+      "publisher": {
+        "@type": "ProfessionalService",
+        "name": "The S Curve",
+        "founder": "Shrishti S Nagar"
+      }
+    }
+    </script>
     
     <!-- FAVICON -->
     <link rel="icon" type="image/png" href="logo.png">
-
-    <base target="_blank">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,7 +87,7 @@
             --cosmic-gradient: linear-gradient(135deg, #c874b2 0%, #f5d5e0 100%);
             --subtle-glow: rgba(200, 116, 178, 0.5);
             --success-green: #4CAF50;
-                    }
+        }
         
         body {
             font-family: 'Inter', -apple-system, sans-serif;
@@ -152,7 +192,7 @@
             box-sizing: border-box;
         }
         
-        /* Header - keeping EXACT same as homepage */
+        /* Header */
         header {
             position: fixed;
             top: 0;
@@ -292,7 +332,7 @@
             filter: blur(40px);
         }
         
-        /* Card background for text - BEST READABILITY */
+        /* Card background for text */
         .portfolio-hero .text-card {
             background: linear-gradient(
                 135deg,
@@ -342,19 +382,14 @@
             animation: fadeInUp 0.8s ease forwards;
             position: relative;
             z-index: 1;
-            
-            /* Enhanced text styling for readability */
             color: var(--text-primary);
             text-shadow: 
                 0 2px 20px rgba(200, 116, 178, 0.5),
                 0 2px 4px rgba(0, 0, 0, 0.3);
-            
-            /* Better spacing */
             padding: 0;
             letter-spacing: -0.02em;
         }
         
-        /* Wave emoji animation */
         .portfolio-hero .wave-emoji {
             display: inline-block;
             font-size: 1.2em;
@@ -373,7 +408,6 @@
             100% { transform: rotate(0deg); }
         }
         
-        /* Scroll indicator */
         .scroll-indicator {
             position: absolute;
             bottom: 30px;
@@ -544,7 +578,7 @@
             opacity: 0.7;
         }
         
-        /* Automation Showcase - Fixed image sizing */
+        /* Automation Showcase */
         .automation-showcase {
             background: rgba(20, 20, 40, 0.3);
         }
@@ -556,19 +590,18 @@
             margin-top: 3rem;
         }
 
+        @media (max-width: 1200px) {
+            .automation-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
 
-        /* Add responsive adjustments */
-@media (max-width: 1200px) {
-    .automation-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
-    }
-}
-
-@media (max-width: 768px) {
-    .automation-grid {
-        grid-template-columns: 1fr; /* 1 column on mobile */
-    }
-}
+        @media (max-width: 768px) {
+            .automation-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
         .automation-card {
             background: rgba(20, 20, 40, 0.6);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -585,7 +618,6 @@
             box-shadow: 0 20px 40px rgba(200, 116, 178, 0.2);
         }
         
-        /* Fixed automation image sizing */
         .automation-image-wrapper {
             width: 100%;
             height: 180px;
@@ -646,7 +678,7 @@
             font-weight: bold;
         }
         
-        /* Case Studies with Enhanced Numbers */
+        /* Case Studies */
         .case-studies-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -707,100 +739,97 @@
             margin-bottom: 1rem;
         }
         
-        /* Fix for Case Study Metrics - Add/Replace this in your CSS */
-.case-study-metrics {
-    display: grid; /* Change from flex to grid */
-    grid-template-columns: repeat(3, 1fr); /* Equal width columns */
-    gap: 1rem;
-    margin-bottom: 1rem;
-    padding: 1rem 0;
-}
+        .case-study-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem 0;
+        }
 
-.metric {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 80px; /* Ensures consistent height */
-}
+        .metric {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80px;
+        }
 
-.metric-number {
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--lightest-pink);
-    text-shadow: 0 0 30px rgba(255, 214, 121, 0.5);
-    display: block;
-    margin-bottom: 0.25rem;
-    line-height: 1.2; /* Consistent line height */
-}
+        .metric-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--lightest-pink);
+            text-shadow: 0 0 30px rgba(255, 214, 121, 0.5);
+            display: block;
+            margin-bottom: 0.25rem;
+            line-height: 1.2;
+        }
 
-.metric-label {
-    font-size: 0.75rem;
-    color: var(--text-secondary);
-    text-align: center;
-    line-height: 1.2;
-    min-height: 2em; /* Ensures labels don't cause shifting */
-}
+        .metric-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-align: center;
+            line-height: 1.2;
+            min-height: 2em;
+        }
 
-/* Optional: Add a subtle separator between metrics */
-.metric:not(:last-child) {
-    position: relative;
-}
+        .metric:not(:last-child) {
+            position: relative;
+        }
 
-.metric:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    right: -0.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 40px;
-    width: 1px;
-    background: rgba(255, 255, 255, 0.1);
-}
+        .metric:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: -0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 40px;
+            width: 1px;
+            background: rgba(255, 255, 255, 0.1);
+        }
 
-/* Mobile responsiveness for metrics */
-@media (max-width: 768px) {
-    .case-study-metrics {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.5rem;
-        padding: 0.75rem 0;
-    }
-    
-    .metric {
-        min-height: 70px;
-    }
-    
-    .metric-number {
-        font-size: 1.5rem;
-    }
-    
-    .metric-label {
-        font-size: 0.65rem;
-    }
-    
-    .metric:not(:last-child)::after {
-        display: none; /* Hide separators on mobile */
-    }
-}
+        @media (max-width: 768px) {
+            .case-study-metrics {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.5rem;
+                padding: 0.75rem 0;
+            }
+            
+            .metric {
+                min-height: 70px;
+            }
+            
+            .metric-number {
+                font-size: 1.5rem;
+            }
+            
+            .metric-label {
+                font-size: 0.65rem;
+            }
+            
+            .metric:not(:last-child)::after {
+                display: none;
+            }
+        }
         
         .case-study-highlight {
-    background: linear-gradient(135deg, rgba(255, 214, 121, 0.1) 0%, rgba(200, 116, 178, 0.1) 100%);
-    border: 1px solid var(--yellow);
-    padding: 1rem;
-    border-radius: 8px;
-    margin-top: 1rem;
-    text-align: center;
-}
+            background: linear-gradient(135deg, rgba(255, 214, 121, 0.1) 0%, rgba(200, 116, 178, 0.1) 100%);
+            border: 1px solid var(--yellow);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            text-align: center;
+        }
         
         .highlight-amount {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--yellow);
-    text-shadow: 0 0 20px rgba(255, 214, 121, 0.5);
-}
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--yellow);
+            text-shadow: 0 0 20px rgba(255, 214, 121, 0.5);
+        }
         
-        /* Fixed Testimonials for Mobile */
+        /* Testimonials */
         .testimonials-container {
             position: relative;
             height: 320px;
@@ -997,7 +1026,7 @@
             transform: translateY(0);
         }
         
-        /* Responsive adjustments for automation images */
+        /* Responsive adjustments */
         @media (min-width: 1920px) {
             .automation-image-wrapper {
                 height: 200px;
@@ -1010,7 +1039,6 @@
             }
         }
         
-        /* Responsive */
         @media (max-width: 768px) {
             .container {
                 padding: 0 15px;
@@ -1020,7 +1048,6 @@
                 padding: 1.5rem 0;
             }
             
-            /* MOBILE HERO ADJUSTMENTS */
             .portfolio-hero {
                 min-height: 45vh;
                 padding: 150px 0 40px;
@@ -1063,7 +1090,6 @@
                 grid-template-columns: 1fr;
             }
             
-            /* Fixed mobile testimonials */
             .testimonials-container {
                 height: 280px;
                 padding: 1rem;
@@ -1086,19 +1112,8 @@
                 font-size: 0.9rem;
             }
             
-            /* Show scroll hint on mobile for table */
             .scroll-hint {
                 display: block;
-            }
-            
-            .cert-table-wrapper {
-                border-radius: 8px;
-            }
-            
-            .cert-table th,
-            .cert-table td {
-                padding: 0.75rem 0.5rem;
-                font-size: 0.8rem;
             }
             
             .nav-links {
@@ -1128,7 +1143,7 @@
     <div class="nebula"></div>
     <div class="stars" id="stars"></div>
     
-    <!-- Header - EXACT same navigation as homepage -->
+    <!-- Header -->
     <header>
         <nav class="container">
             <a href="index.html" class="logo">
@@ -1141,7 +1156,7 @@
                 <li><a href="index.html#services">Services</a></li>
                 <li><a href="index.html#testimonials">Results</a></li>
             </ul>
-            <a href="https://topmate.io/shrishtisnagar/1742503" class="header-cta">Book 1:1 Call</a>
+            <a href="https://topmate.io/shrishtisnagar/1742503" class="header-cta" target="_blank">Book 1:1 Call</a>
         </nav>
     </header>
 
@@ -1205,8 +1220,7 @@
         </div>
     </section>
 
-   
-    <!-- n8n Automation Showcase without tags -->
+    <!-- n8n Automation Showcase -->
 <section class="automation-showcase fade-in-element" id="automations">
     <div class="container">
         <div class="section-header">
@@ -1214,7 +1228,7 @@
         </div>
         
         <div class="automation-grid">
-            <!-- Automation 1: Content Strategist -->
+            <!-- Automation 1 -->
             <div class="automation-card">
                 <div class="automation-image-wrapper">
                     <img src="content-strategist.png" alt="AI Content Strategist" class="automation-image">
@@ -1230,7 +1244,7 @@
                 </div>
             </div>
             
-            <!-- Automation 2: Multi-Platform Content -->
+            <!-- Automation 2 -->
             <div class="automation-card">
                 <div class="automation-image-wrapper">
                     <img src="team-workflow.png" alt="Team Content Workflow" class="automation-image">
@@ -1246,7 +1260,7 @@
                 </div>
             </div>
             
-            <!-- Automation 3: Landing Page Analyzer -->
+            <!-- Automation 3 -->
             <div class="automation-card">
                 <div class="automation-image-wrapper">
                     <img src="landing-optimizer.png" alt="Landing Page Optimizer" class="automation-image">
@@ -1262,7 +1276,7 @@
                 </div>
             </div>
             
-            <!-- NEW Automation 4: LinkedIn Auto-Curator -->
+            <!-- Automation 4 -->
             <div class="automation-card">
                 <div class="automation-image-wrapper">
                     <img src="linkedin-content.png" alt="LinkedIn Auto-Curator" class="automation-image">
@@ -1281,7 +1295,6 @@
     </div>
 </section>
 
-    
     <!-- Case Studies with Enhanced Numbers -->
     <section class="case-studies fade-in-element" id="case-studies">
         <div class="container">
@@ -1290,7 +1303,7 @@
             </div>
             
             <div class="case-studies-grid">
-                <!-- Case Study 1: Lauren Plante -->
+                <!-- Case Study 1 -->
                 <div class="case-study-card">
                     <div class="case-study-header">
                         <span class="case-study-badge">LINKEDIN EVENT STRATEGY</span>
@@ -1315,10 +1328,10 @@
                                 <div class="metric-label">Profile Views</div>
                             </div>
                         </div>
-                                           </div>
+                    </div>
                 </div>
                 
-                <!-- Case Study 2: Carlo Fortugno -->
+                <!-- Case Study 2 -->
                 <div class="case-study-card">
                     <div class="case-study-header">
                         <span class="case-study-badge">B2B LEAD GENERATION</span>
@@ -1343,11 +1356,10 @@
                                 <div class="metric-label">Qualified Leads</div>
                             </div>
                         </div>
-                       
                     </div>
                 </div>
                 
-                <!-- Case Study 3: Mompreneur -->
+                <!-- Case Study 3 -->
                 <div class="case-study-card">
                     <div class="case-study-header">
                         <span class="case-study-badge">PERSONAL BRANDING</span>
@@ -1372,11 +1384,10 @@
                                 <div class="metric-label">Profile Views ↑</div>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
                 
-                <!-- Case Study 4: Process Specialist -->
+                <!-- Case Study 4 -->
                 <div class="case-study-card">
                     <div class="case-study-header">
                         <span class="case-study-badge">THOUGHT LEADERSHIP</span>
@@ -1401,7 +1412,6 @@
                                 <div class="metric-label">Profile Views ↑</div>
                             </div>
                         </div>
-                       
                     </div>
                 </div>
             </div>
@@ -1519,8 +1529,8 @@
                     Let's discuss how AI-first marketing automation can transform your growth
                 </p>
                 <div class="cta-buttons">
-                    <a href="https://calendly.com/shrishtisnagar/1-1-clarity-call-with-shrishti" class="btn-primary">Book a Free Call</a>
-                    <a href="https://topmate.io/shrishtisnagar/1742503" class="btn-secondary">Book 1:1 Consultation</a>
+                    <a href="https://calendly.com/shrishtisnagar/1-1-clarity-call-with-shrishti" class="btn-primary" target="_blank">Book a Free Call</a>
+                    <a href="https://topmate.io/shrishtisnagar/1742503" class="btn-secondary" target="_blank">Book 1:1 Consultation</a>
                 </div>
             </div>
         </div>
@@ -1610,12 +1620,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
