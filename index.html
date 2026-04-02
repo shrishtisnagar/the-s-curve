@@ -1,0 +1,540 @@
+<!DOCTYPE html><html class="dark scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>The S Curve | Marketing for Heavy Industry</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal-visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal-hidden').forEach(el => revealObserver.observe(el));
+
+            const nav = document.querySelector('nav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    nav.classList.add('py-2', 'bg-[#24062b]/95', 'shadow-2xl');
+                    nav.classList.remove('py-4', 'bg-[#24062b]/80');
+                } else {
+                    nav.classList.add('py-4', 'bg-[#24062b]/80');
+                    nav.classList.remove('py-2', 'bg-[#24062b]/95', 'shadow-2xl');
+                }
+            });
+
+            // Mobile menu toggle
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script id="tailwind-config">
+          tailwind.config = {
+            darkMode: "class",
+            theme: {
+              extend: {
+                colors: {
+                  "on-surface": "#fed6ff",
+                  "on-primary-fixed-variant": "#5d4201",
+                  "inverse-primary": "#775a19",
+                  "outline-variant": "#4d444c",
+                  "secondary-container": "#752d67",
+                  "on-primary": "#412d00",
+                  "primary-container": "#3a2800",
+                  "secondary": "#fface7",
+                  "on-surface-variant": "#d0c3cc",
+                  "inverse-surface": "#fed6ff",
+                  "surface-tint": "#e8c176",
+                  "on-secondary-fixed": "#3a0032",
+                  "on-primary-container": "#b08d48",
+                  "error": "#ffb4ab",
+                  "error-container": "#93000a",
+                  "surface": "#24062b",
+                  "on-tertiary-fixed": "#300b34",
+                  "on-error-container": "#ffdad6",
+                  "primary-fixed-dim": "#e8c176",
+                  "tertiary": "#eab6e9",
+                  "surface-container": "#321338",
+                  "on-secondary": "#57124c",
+                  "inverse-on-surface": "#44244a",
+                  "surface-container-low": "#2d0e33",
+                  "secondary-fixed": "#ffd7f0",
+                  "surface-bright": "#4e2d53",
+                  "outline": "#998d96",
+                  "on-background": "#fed6ff",
+                  "primary": "#e8c176",
+                  "on-tertiary-container": "#b382b2",
+                  "surface-container-high": "#3d1d43",
+                  "surface-container-highest": "#49284e",
+                  "on-secondary-fixed-variant": "#722b64",
+                  "on-secondary-container": "#f49bdc",
+                  "on-tertiary": "#48214b",
+                  "background": "#24062b",
+                  "on-error": "#690005",
+                  "on-tertiary-fixed-variant": "#613863",
+                  "surface-dim": "#24062b",
+                  "surface-container-lowest": "#1e0225",
+                  "tertiary-fixed-dim": "#eab6e9",
+                  "tertiary-container": "#421c45",
+                  "surface-variant": "#49284e",
+                  "secondary-fixed-dim": "#fface7",
+                  "primary-fixed": "#ffdea4",
+                  "on-primary-fixed": "#261900",
+                  "tertiary-fixed": "#ffd6fb"
+                },
+                fontFamily: {
+                  "headline": ["Newsreader", "serif"],
+                  "body": ["Manrope", "sans-serif"],
+                  "label": ["Manrope", "sans-serif"]
+                },
+                borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                keyframes: {
+                  reveal: {
+                    '0%': { opacity: '0', transform: 'translateY(20px)' },
+                    '100%': { opacity: '1', transform: 'translateY(0)' },
+                  },
+                  float: {
+                    '0%, 100%': { transform: 'translateY(0)' },
+                    '50%': { transform: 'translateY(-15px)' },
+                  }
+                },
+                animation: {
+                  reveal: 'reveal 0.8s cubic-bezier(0.21, 0.45, 0.32, 0.9) forwards',
+                  float: 'float 6s ease-in-out infinite',
+                }
+              },
+            },
+          }
+        </script>
+<style>
+          body {
+            background-color: #24062b;
+            color: #fed6ff;
+            font-family: 'Manrope', sans-serif;
+          }
+          .nebula-glow {
+            box-shadow: 0 24px 40px rgba(58, 0, 50, 0.15);
+          }
+          .glass-card {
+            background: rgba(50, 19, 56, 0.7);
+            backdrop-filter: blur(20px);
+          }
+          .gold-shimmer {
+            background: linear-gradient(135deg, #e8c176 0%, #b08d48 100%);
+            background-size: 200% 200%;
+            transition: background-position 0.5s ease;
+          }
+          .gold-shimmer:hover {
+            background-position: right center;
+          }
+          .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+          }
+          .reveal-hidden {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.21, 0.45, 0.32, 0.9);
+          }
+          .reveal-visible {
+            opacity: 1;
+            transform: translateY(0);
+          }
+          .parallax-bg {
+            transition: transform 0.2s cubic-bezier(0.03, 0.98, 0.52, 0.99);
+          }
+          .premium-heading {
+            letter-spacing: -0.02em;
+          }
+          .premium-heading span.italic {
+            font-weight: 300;
+          }
+          .gold-border-gradient {
+            border-image: linear-gradient(to right, #e8c176, transparent) 1;
+          }
+    </style>
+</head>
+<body class="bg-surface text-on-surface overflow-x-hidden">
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#24062b]/80 backdrop-blur-xl transition-all duration-300">
+<div class="flex justify-between items-center px-8 py-4 max-w-5xl mx-auto">
+  <a class="text-xl font-serif italic text-[#e8c176] tracking-tight hover:opacity-80 transition-opacity" href="#">The S Curve</a>
+
+  <!-- Desktop Nav -->
+  <div class="hidden md:flex items-center gap-10">
+    <a class="text-white/70 hover:text-[#fface7] transition-all duration-300 font-label uppercase text-[0.75rem] tracking-[0.05em] relative group" href="#case-studies">
+      Case Studies
+      <span class="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#fface7] transition-all duration-300 group-hover:w-full"></span>
+    </a>
+    <a class="text-white/70 hover:text-[#fface7] transition-all duration-300 font-label uppercase text-[0.75rem] tracking-[0.05em] relative group" href="#is-this-for-you">
+      Is This For You
+      <span class="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#fface7] transition-all duration-300 group-hover:w-full"></span>
+    </a>
+    <a class="text-white/70 hover:text-[#fface7] transition-all duration-300 font-label uppercase text-[0.75rem] tracking-[0.05em] relative group" href="#process">
+      Process
+      <span class="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#fface7] transition-all duration-300 group-hover:w-full"></span>
+    </a>
+  </div>
+
+  <div class="flex items-center gap-4">
+    <a href="https://calendly.com/shrishtisnagar/1-1-clarity-call-with-shrishti" target="_blank" rel="noopener noreferrer" class="gold-shimmer text-on-primary px-6 py-2.5 rounded-full font-body font-bold text-sm hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-primary/10">
+      Book a Call
+    </a>
+    <!-- Mobile Hamburger -->
+    <button id="mobile-menu-btn" class="md:hidden text-white/70 hover:text-white transition-colors">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+</div>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden md:hidden bg-[#24062b]/98 backdrop-blur-xl border-t border-white/5 px-8 py-6 flex flex-col gap-6">
+  <a class="text-white/70 hover:text-[#fface7] transition-all font-label uppercase text-[0.75rem] tracking-[0.05em]" href="#case-studies" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Case Studies</a>
+  <a class="text-white/70 hover:text-[#fface7] transition-all font-label uppercase text-[0.75rem] tracking-[0.05em]" href="#is-this-for-you" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Is This For You</a>
+  <a class="text-white/70 hover:text-[#fface7] transition-all font-label uppercase text-[0.75rem] tracking-[0.05em]" href="#process" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Process</a>
+</div>
+</nav>
+
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center py-24 md:py-32 px-8 overflow-hidden bg-surface-container-lowest">
+<div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center relative z-10">
+  <!-- Personal Photo -->
+  <div class="lg:col-span-5 relative group reveal-hidden reveal-visible" id="hero-img-container">
+    <a class="block" href="https://linkedin.com/in/shrishtisnagar" target="_blank">
+      <div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full opacity-30 -z-10 group-hover:opacity-50 transition-opacity duration-700"></div>
+      <img alt="Portrait of Shrishti S Nagar" class="w-full aspect-[3/4] object-cover rounded-xl shadow-2xl border border-white/5 transition-all duration-700 cursor-pointer transform" id="hero-image" src="https://lh3.googleusercontent.com/aida/ADBb0uj--LxnhVHad2uRYwaKj8CV0jqv0xWzc852Xqp2aLrYGNhdXj03OF_EkFjniOErO73TnUK1EKm-KduhPPNcm3zgnrRRGOep4Za9pZAOecaK8_5_h94p849rVsFGpiAxpvyD-xtGNcWIOy99TUO0vgWxl5g25Rj1gU3y1RW2sm_QjdeWKpy-BK-1X7Hk-aCRhnld6aOpg5uW1Z7kxTnW1LO01w-uJYwZ0C5adryaDQUXC-mEzWSQAitU-2SdXPCtmrsZILTs8xjcmg">
+    </a>
+  </div>
+
+  <!-- Headline Content -->
+  <div class="lg:col-span-7 flex flex-col items-start reveal-hidden reveal-visible" style="transition-delay: 200ms;">
+    <h1 class="font-headline text-5xl md:text-6xl lg:text-7xl leading-none text-white mb-6 tracking-tighter font-black premium-heading">Invisible on <span class="text-[#fface7] font-bold">LinkedIn?</span></h1>
+    <div class="text-on-surface-variant max-w-xl mb-8 leading-relaxed">
+      <div class="inline-block px-6 py-3 bg-white/[0.03] border-l-2 border-primary/60 rounded-r-xl mb-5 shadow-[20px_0_40px_rgba(232,193,118,0.03)] backdrop-blur-md relative overflow-hidden group">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent"></div>
+        <span class="relative block text-primary font-bold font-body text-sm md:text-base tracking-[0.15em] uppercase">YOUR RIVALS ARE THANKING YOU</span>
+      </div>
+      <p class="font-body text-sm md:text-base leading-relaxed opacity-90">
+        You think it's a waste of time, or your company presence has it covered. But in Heavy Industry, buyers trust humans, not logos. If you aren't showing up, you are handing your market share to whoever is brave enough to be seen. Ready to change that?
+      </p>
+    </div>
+    <div class="flex flex-wrap gap-6 items-center">
+      <a href="https://calendly.com/shrishtisnagar/1-1-clarity-call-with-shrishti" target="_blank" rel="noopener noreferrer" class="gold-shimmer text-on-primary px-10 py-4 rounded-full font-body font-bold text-base nebula-glow transition-all hover:scale-105 active:scale-95">
+        Book a Call
+      </a>
+      <a class="border border-primary/50 text-primary/80 px-7 py-3 rounded-full font-body font-semibold text-sm hover:bg-primary/10 transition-all inline-flex items-center hover:shadow-[0_0_20px_rgba(232,193,118,0.15)]" href="#case-studies">
+        View Case Studies
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Background Industrial Element -->
+<div class="absolute top-1/2 -right-20 -translate-y-1/2 opacity-10 pointer-events-none animate-float">
+  <img alt="Industrial Blueprint" class="h-[1024px] w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG-YoBT44tYb8hAtEcinDnJbM45dz_VklD8GgdSWaKEfAIvqK3w5b5pxSIN7dzIHAdqNYWBEFT5N9zgjnSdtxrKCEi7p3NyNKyd_LbpiWOxPgHHaJtLpymj64-HEKcFHt-bXz9RMuwytEdt_AWHaonYAEmjT-48kJVgDV8-REvkDrS8cbdPwnkvH260aHW2zv3mqO1q0EwpO1v9dvMRrixGrnwClzth4aKDR6y9ox9YNG7FRchD7L89yalLFS40-Tjbrq2Dx3p2Qb_">
+</div>
+</section>
+
+<!-- Proven In The Field (Industrial Chapters Style) -->
+<section class="py-16 bg-surface-container-lowest" id="case-studies">
+<div class="px-8 max-w-5xl mx-auto">
+  <div class="mb-12 text-center reveal-hidden reveal-visible">
+    <h2 class="font-headline text-4xl md:text-5xl mb-4 text-white premium-heading">Industrial <span class="italic text-primary">Chapters</span></h2>
+    <p class="font-label text-[0.75rem] uppercase tracking-[0.3em] text-on-surface-variant">Real Impact. Heavy Results.</p>
+  </div>
+  <div class="space-y-16">
+    <!-- Chapter 1 -->
+    <div class="flex flex-col md:flex-row gap-12 items-center reveal-hidden reveal-visible">
+      <div class="w-full md:w-1/2 aspect-[3/4] rounded-xl overflow-hidden relative group">
+        <img alt="High-impact yellow excavator working under a brilliant blue sky" class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8vDMFftf3TJxx2LT0ABcsuRYnnsXW3b5ToVmSOMh2OhflnxCm_F-MRMgRvm8VWiyBF25-xK0DYRKe09wUOLVPX6cN4_Ir8qZgdzdvIP2d5cLdKZFp7J9v_Hxnzij-7WQ-29xzVGirfb3OBoaFzAEXkM-EQdclw55BM48eruKKINAGgLjURpZ4VcjoA0zA2sIbvQf9RpxSpLmu3VzYZoofW_cjVFNnu2LJe-mMkvTMEhGoR1fmLnxEOtHN8ATHWVbTORbezWXyBpon">
+        <div class="absolute inset-0 bg-gradient-to-t from-surface/40 to-transparent opacity-40"></div>
+      </div>
+      <div class="w-full md:w-1/2">
+        <span class="text-secondary font-label text-[0.75rem] uppercase tracking-widest mb-4 block">Chapter One: Authority Mining</span>
+        <h3 class="font-headline text-2xl md:text-3xl mb-6">Thought Leadership for Mining CEO</h3>
+        <p class="text-on-surface-variant text-base leading-relaxed mb-8 italic">
+          "He had been consistent on LinkedIn but failed to get traction that would get attention from his potential customers."
+        </p>
+        <div class="p-8 bg-surface-container rounded-xl border-l-4 border-primary hover:border-l-8 transition-all duration-300">
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+              <span class="font-headline italic text-xl text-white">45% increase in qualified enterprise leads</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+              <span class="font-headline italic text-xl text-white">Followers: 1,700 → 10,000+ (qualified industry audience)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chapter 2 -->
+    <div class="flex flex-col md:flex-row-reverse gap-12 items-center reveal-hidden reveal-visible">
+      <div class="w-full md:w-1/2 aspect-[3/4] rounded-xl overflow-hidden relative group">
+        <img alt="Modern industrial facility with blue-tinted lighting and precision automation" class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABRWX6xryY2fsX39lLTUpq_y7dfNtUP5H1efTl-O0w7wiCaJoKPZ61QCpMEJfSXHsnlrbu4FlsdWNYwo4SkJrJlfAvWjUGtCD67wsYmiLB0BQVYO-oqkvFFZScN5gKSty5voeNE4K5fV99xWPgiN39hg9_KX9gJPOWeAqQf3aZ575EEf1vx9gXLZ0ooUOa9pjFP50ISc6dlooUOWhvKm65bHrdgNLYDZXcjPBCh_8D7NVX9xrTJSjQcdXA1l0rOuv4VRiNkKcyCHL-">
+        <div class="absolute inset-0 bg-gradient-to-t from-surface/40 to-transparent opacity-40"></div>
+      </div>
+      <div class="w-full md:w-1/2">
+        <span class="text-secondary font-label text-[0.75rem] uppercase tracking-widest mb-4 block">Chapter Two: Global Precision</span>
+        <h3 class="font-headline text-2xl md:text-3xl mb-6">US Launch for German Engineering Brand</h3>
+        <p class="text-on-surface-variant text-base leading-relaxed mb-8 italic">
+          "Entering the US market with low brand visibility. LinkedIn page had only 83 followers."
+        </p>
+        <div class="p-8 bg-surface-container rounded-xl border-l-4 border-primary hover:border-l-8 transition-all duration-300">
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+              <span class="font-headline italic text-xl text-white">6× Organic growth in initial phase</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+              <span class="font-headline italic text-xl text-white">Followers: 83 → 703</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+              <span class="font-headline italic text-xl text-white">168 Training Registrations via organic reach</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Testimonial Section -->
+<section class="bg-surface relative overflow-hidden flex items-center justify-center py-20 md:py-28">
+<div class="absolute inset-0 z-0">
+  <img alt="Industrial architecture background" class="w-full h-full object-cover grayscale opacity-20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbngPKKyoPiatYX-Vlr7CyjDyMiiLqbdiPZnQEb7KIHtXDGj5zoc3k4Wqlr7SUhyxKJIby95A23AILMpDx1srbKndV-Emyv--ZwWz0nauFZIvUAgmUvp7KbH0akX9IUHzqlZkaHpMAXokmRz0TXy1mvVmzQSoIC1L_doCCC2ZhGVVx5sMQAsPJNG-pkQMeA1i-uanDiPr5U91zwzBWP3Gl9_u4y0D-7JhYlk_Mj8ASE04pCj26yaaKMa3AWWms5Sth-GVL1UlvjJnL">
+  <div class="absolute inset-0 bg-gradient-to-b from-surface via-surface/80 to-surface"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(232,193,118,0.08)_0%,_transparent_70%)]"></div>
+</div>
+<div class="max-w-3xl mx-auto px-8 relative z-10 reveal-hidden reveal-visible">
+  <div class="flex flex-col items-center">
+    <blockquote class="text-center">
+      <!-- Stars -->
+      <div class="flex justify-center gap-1 mb-6">
+        <span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings:'FILL' 1">star</span>
+        <span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings:'FILL' 1">star</span>
+        <span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings:'FILL' 1">star</span>
+        <span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings:'FILL' 1">star</span>
+        <span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings:'FILL' 1">star</span>
+      </div>
+      <p class="font-headline text-2xl md:text-4xl text-white italic leading-[1.1] tracking-tight mb-10 max-w-3xl mx-auto">
+        "Rarely do you find someone who knows what they're doing <span class="text-primary not-italic font-bold">AND</span> makes the process effortless."
+      </p>
+      <footer class="flex flex-col items-center">
+        <div class="h-[2px] w-16 bg-primary/40 mb-4"></div>
+        <cite class="not-italic">
+          <span class="block font-label text-white uppercase tracking-[0.3em] text-sm font-extrabold mb-2">Carlo Fortugno</span>
+          <span class="block font-label text-primary/60 uppercase tracking-[0.15em] text-[0.7rem]">CEO · DustAct</span>
+        </cite>
+      </footer>
+    </blockquote>
+  </div>
+</div>
+</section>
+
+<!-- Is This For You -->
+<section class="px-8 bg-surface-container-lowest relative overflow-hidden py-16" id="is-this-for-you">
+<div class="absolute inset-0 z-0">
+  <img alt="High-impact vibrant blue heavy industrial crane at sunset" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf4R9JoHdUWW5msoSPVPkHO0-vBInUQMrrmGrbHg86e82OpkuyOw7HxbcltZEcxBYoeQlqxBK54oHuL92Jm0buaRoOQvZg-JFnbfuvD_ilMFd0VPoOHBS3JDmW-D7HN_BJV7bhr9mMg5B3xN9eHPz90GnZsohbXEVc-qdzSSg4UgdKoEJsuUntnCZIMdOKb0xJEs5ZWraSKcwxn6vFfnDdkV8mSQQwsDJwRX2f5-jDHJ2Qzq7FosMiEAPLyH5WyVKirhn_6zft1rEC">
+</div>
+<div class="max-w-5xl mx-auto relative z-10 reveal-hidden reveal-visible">
+  <div class="glass-card p-10 md:p-14 rounded-[2.5rem] text-center border border-white/10 shadow-2xl transition-all duration-500 hover:border-primary/20 hover:shadow-primary/5 bg-surface/90 backdrop-blur-2xl">
+    <h2 class="font-headline text-4xl md:text-5xl text-white mb-8 premium-heading">Is Your Business Ready for <span class="text-primary italic">Visibility?</span></h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 text-left mb-10 divide-y md:divide-y-0 md:divide-x divide-white/10">
+      <div class="space-y-6 md:pr-10">
+        <h4 class="font-headline text-2xl text-primary underline decoration-secondary/30 underline-offset-8">You are a fit if...</h4>
+        <ul class="space-y-4 font-body text-on-surface-variant">
+          <li class="flex items-start gap-3 group">
+            <span class="material-symbols-outlined text-primary mt-1 group-hover:scale-125 transition-transform">bolt</span>
+            <span>You manufacture mission-critical equipment.</span>
+          </li>
+          <li class="flex items-start gap-3 group">
+            <span class="material-symbols-outlined text-primary mt-1 group-hover:scale-125 transition-transform">bolt</span>
+            <span>Your sales cycles are long and complex.</span>
+          </li>
+          <li class="flex items-start gap-3 group">
+            <span class="material-symbols-outlined text-primary mt-1 group-hover:scale-125 transition-transform">bolt</span>
+            <span>You value authority over shallow engagement.</span>
+          </li>
+        </ul>
+      </div>
+      <div class="space-y-6 md:pl-10 pt-6 md:pt-0">
+        <h4 class="font-headline text-2xl text-secondary underline decoration-secondary/30 underline-offset-8">We are not a fit if...</h4>
+        <ul class="space-y-4 font-body text-on-surface-variant opacity-70">
+          <li class="flex items-start gap-3 group">
+            <span class="material-symbols-outlined text-secondary mt-1 group-hover:rotate-90 transition-transform">close</span>
+            <span>You are looking for "quick viral wins".</span>
+          </li>
+          <li class="flex items-start gap-3 group">
+            <span class="material-symbols-outlined text-secondary mt-1 group-hover:rotate-90 transition-transform">close</span>
+            <span>Your primary focus is B2C consumer goods.</span>
+          </li>
+          <li class="flex items-start gap-3 group">
+            <span class="material-symbols-outlined text-secondary mt-1 group-hover:rotate-90 transition-transform">close</span>
+            <span>You compete solely on price, not value.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <a href="https://calendly.com/shrishtisnagar/1-1-clarity-call-with-shrishti" target="_blank" rel="noopener noreferrer" class="inline-block gold-shimmer text-on-primary px-10 py-4 rounded-full font-body font-bold text-base hover:scale-105 active:scale-95 transition-all shadow-[0_0_50px_rgba(232,193,118,0.2)] hover:shadow-[0_0_60px_rgba(232,193,118,0.3)]">
+      Book a Call
+    </a>
+  </div>
+</div>
+</section>
+
+<!-- The Celestial Sequence (Process) -->
+<section class="py-20 px-8 bg-surface relative overflow-hidden" id="process">
+<div class="absolute inset-0 opacity-5 pointer-events-none grayscale mix-blend-overlay">
+  <img alt="Industrial Background Texture" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG-YoBT44tYb8hAtEcinDnJbM45dz_VklD8GgdSWaKEfAIvqK3w5b5pxSIN7dzIHAdqNYWBEFT5N9zgjnSdtxrKCEi7p3NyNKyd_LbpiWOxPgHHaJtLpymj64-HEKcFHt-bXz9RMuwytEdt_AWHaonYAEmjT-48kJVgDV8-REvkDrS8cbdPwnkvH260aHW2zv3mqO1q0EwpO1v9dvMRrixGrnwClzth4aKDR6y9ox9YNG7FRchD7L89yalLFS40-Tjbrq2Dx3p2Qb_">
+</div>
+<div class="max-w-5xl mx-auto relative z-10">
+  <div class="mb-12 text-center reveal-hidden reveal-visible">
+    <h2 class="font-headline text-4xl md:text-5xl text-white premium-heading">How it <span class="italic text-primary">works</span></h2>
+    <p class="font-body text-on-surface-variant mt-4 max-w-xl mx-auto">Why waste your weekend trying to "create content"? I use a 3-phase launch system that asks for less than <b>3 hours of your time monthly</b>.</p>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <!-- Week 1 -->
+    <div class="bg-surface-container p-10 hover:bg-surface-container-high transition-all duration-300 relative group overflow-hidden rounded-xl border border-white/5 reveal-hidden reveal-visible">
+      <div class="absolute -top-10 -right-10 text-9xl font-headline italic opacity-5 text-white group-hover:opacity-10 transition-opacity">01</div>
+      <div class="absolute bottom-[-20%] right-[-10%] opacity-5 group-hover:opacity-10 transition-opacity rotate-12 pointer-events-none">
+        <span class="material-symbols-outlined text-[120px]">architecture</span>
+      </div>
+      <h4 class="font-headline text-2xl text-primary mb-6 italic">Week 1: Foundations</h4>
+      <ul class="space-y-4">
+        <li class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-[#fface7] text-sm mt-0.5">arrow_forward</span>
+          <span class="font-body text-sm text-on-surface-variant">Kickoff Call</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-[#fface7] text-sm mt-0.5">arrow_forward</span>
+          <span class="font-body text-sm text-on-surface-variant">Brand Discovery (tone &amp; visual identity)</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-[#fface7] text-sm mt-0.5">arrow_forward</span>
+          <span class="font-body text-sm text-on-surface-variant">Competitor &amp; ICP Research</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-[#fface7] text-sm mt-0.5">arrow_forward</span>
+          <span class="font-body text-sm text-on-surface-variant">LinkedIn Audit + Optimization</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Week 2 -->
+    <div class="bg-surface-container p-10 hover:bg-surface-container-high transition-all duration-300 relative group overflow-hidden rounded-xl border border-white/5 reveal-hidden reveal-visible" style="transition-delay: 150ms;">
+      <div class="absolute -top-10 -right-10 text-9xl font-headline italic opacity-5 text-white group-hover:opacity-10 transition-opacity">02</div>
+      <div class="absolute bottom-[-20%] right-[-10%] opacity-5 group-hover:opacity-10 transition-opacity -rotate-12 pointer-events-none">
+        <span class="material-symbols-outlined text-[120px]">settings</span>
+      </div>
+      <h4 class="font-headline text-2xl text-primary mb-6 italic">Week 2: Strategy</h4>
+      <ul class="space-y-4">
+        <li class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-[#fface7] text-sm mt-0.5">arrow_forward</span>
+          <span class="font-body text-sm text-on-surface-variant">Content &amp; growth strategy</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-[#fface7] text-sm mt-0.5">arrow_forward</span>
+          <span class="font-body text-sm text-on-surface-variant">Content Ideation, Extraction &amp; Shortlisting</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-[#fface7] text-sm mt-0.5">arrow_forward</span>
+          <span class="font-body text-sm text-on-surface-variant">Content Preparation + Approval</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-[#fface7] text-sm mt-0.5">arrow_forward</span>
+          <span class="font-body text-sm text-on-surface-variant">Monthly cycle begins</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Week 3 Onwards -->
+    <div class="bg-surface-container-high p-10 relative group overflow-hidden rounded-xl border-2 border-primary/30 shadow-[0_0_30px_rgba(232,193,118,0.1)] reveal-hidden reveal-visible" style="transition-delay: 300ms;">
+      <div class="absolute -top-10 -right-10 text-9xl font-headline italic opacity-10 text-primary group-hover:opacity-20 transition-opacity">∞</div>
+      <div class="absolute bottom-[-20%] right-[-10%] opacity-10 group-hover:opacity-20 transition-opacity pointer-events-none">
+        <span class="material-symbols-outlined text-[120px]">precision_manufacturing</span>
+      </div>
+      <div class="mb-6">
+        <span class="inline-block bg-primary/20 text-primary text-[0.65rem] uppercase tracking-widest px-2.5 py-1 rounded-full font-bold mb-2">Steady State</span>
+        <h4 class="font-headline text-2xl text-white italic">Week 3 Onwards</h4>
+      </div>
+      <ul class="space-y-4">
+        <li class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-primary text-sm mt-1">sync</span>
+          <span class="font-body text-sm text-white">High value thought leadership posts</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-primary text-sm mt-1">sync</span>
+          <span class="font-body text-sm text-white">Targeted Connection Growth</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-primary text-sm mt-1">sync</span>
+          <span class="font-body text-sm text-white">Engagement with prospects</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-primary text-sm mt-1">sync</span>
+          <span class="font-body text-sm text-white">Inbox Lead Monitoring</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-primary text-sm mt-1">sync</span>
+          <span class="font-body text-sm text-white">Monthly Analytics &amp; Reports</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- CTA Section with High-Impact Image -->
+<section class="relative py-24 md:py-32 px-8 flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+  <img alt="High-impact industrial plant machinery" class="w-full h-full object-cover brightness-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmoTpLypccE9bpLagtwY5z4tn07-cJhNhh4UWdtHkdphOkpO5SSDh_4Ph7acAfSyU50pS8FINHNJ-0vUL-7eJBCjSLTbLktPGWpUW8g1Up2iKulStfEK9hLiLdO34hCppuIUSd1GCBegHX-aWm7_Cb7R5JdEgiq1-PJ_wCzoMJ2LTp8t1-hoNkrNndwutgzmAbe-QwmqlgDZdP4SCxEBe_wpb8U4zH1BiR1MqQ-16SAwn698MKcdArln4zlXvYKjw0RnVuwx3JqgLg">
+  <div class="absolute inset-0 bg-[#24062b]/60 mix-blend-multiply"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-[#1e0225]/70 via-transparent to-[#1e0225]/70"></div>
+</div>
+<div class="max-w-3xl mx-auto text-center relative z-10 reveal-hidden reveal-visible">
+  <h2 class="font-headline text-4xl md:text-5xl text-white mb-6 premium-heading">Ready to fix your <span class="text-primary italic">LinkedIn presence?</span></h2>
+  <p class="font-body text-base text-on-surface-variant mb-8 mx-auto">
+    Let's get on a no-strings attached clarity call to see if we are a good fit.
+  </p>
+  <a href="https://calendly.com/shrishtisnagar/1-1-clarity-call-with-shrishti" target="_blank" rel="noopener noreferrer" class="inline-block gold-shimmer text-on-primary px-10 py-4 rounded-full font-body font-bold text-base hover:scale-105 active:scale-95 transition-all shadow-[0_0_50px_rgba(232,193,118,0.2)]">
+    Get my 15-min fit check
+  </a>
+</div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-[#1e0225] py-12 px-8 border-t border-white/5 relative z-10">
+<div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+  <p class="text-on-surface-variant/60 font-body text-sm tracking-wide text-center md:text-left">
+    © 2026 The S Curve | Shrishti S Nagar. All rights reserved. | Proudly serving Global Clients from India.
+  </p>
+  <a href="https://linkedin.com/in/shrishtisnagar" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-on-surface-variant/50 hover:text-primary transition-colors font-label text-sm uppercase tracking-widest">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+    LinkedIn
+  </a>
+</div>
+</footer>
+</body></html>
